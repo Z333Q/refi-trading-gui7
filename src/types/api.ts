@@ -1,7 +1,7 @@
 export interface OrderPreviewAction {
-  symbol?: string
-  side?: 'buy' | 'sell'
-  qty?: number
+  symbol: string
+  side: 'buy' | 'sell'
+  qty: number
 }
 
 export interface OrderPreviewProof {
@@ -19,7 +19,7 @@ export interface OrderPreviewPolicy {
 
 export interface OrderPreviewResult {
   order_preview_id: string
-  action?: OrderPreviewAction
+  action: OrderPreviewAction
   proof: OrderPreviewProof
   policy: OrderPreviewPolicy
   trace_id: string

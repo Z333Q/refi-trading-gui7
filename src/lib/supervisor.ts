@@ -1,3 +1,6 @@
+/**
+ * Determine whether an order reduces the absolute position size.
+ */
 export function isReduction(currentQty: number, side: 'buy' | 'sell', qty: number): boolean {
   const nextQty = currentQty + (side === 'buy' ? +qty : -qty)
   return Math.abs(nextQty) < Math.abs(currentQty)
@@ -9,6 +12,9 @@ export interface SupervisorDecisionCtx {
   currentQty: number
 }
 
+/**
+ * Combine upstream checks and safe-mode status to decide on an order.
+ */
 export function supervisorDecision(ctx: SupervisorDecisionCtx): 'APPROVE' | 'REJECT' | 'APPROVE_REDUCTION_ONLY' {
   const { aceOk, varOk, degraded } = ctx.checks
   const { order, currentQty } = ctx
