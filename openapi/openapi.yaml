@@ -1,0 +1,116 @@
+openapi: 3.0.3
+info:
+  title: ReFi.Trading API
+  version: 0.1.0
+paths:
+  /snaptrade/portal:
+    post:
+      summary: Create SnapTrade Connection Portal URL
+      responses:
+        '200':
+          description: Portal URL created
+  /webhooks/snaptrade:
+    post:
+      summary: SnapTrade webhook receiver (trades/holdings/connection)
+      responses:
+        '200':
+          description: Webhook received
+  /orders/preview:
+    post:
+      summary: Dual-proof preview (no execution)
+      responses:
+        '200':
+          description: Preview bundle
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderPreviewResult'
+        '409':
+          description: Safe-mode / policy unavailable
+  /orders:
+    post:
+      summary: Execute order from preview (ERC-4337 session key)
+      responses:
+        '202':
+          description: Accepted
+        '409':
+          description: Mismatch or expired preview
+  /proofs/{proof_id}:
+    get:
+      summary: Get zk-VaR proof metadata
+      parameters:
+        - name: proof_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Proof metadata
+  /verdicts/{verdict_id}:
+    get:
+      summary: Get ACE policy verdict
+      parameters:
+        - name: verdict_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: ACE policy verdict
+components:
+  schemas:
+    OrderPreviewResult:
+      type: object
+      required:
+        - order_preview_id
+        - proof
+        - policy
+        - trace_id
+      properties:
+        order_preview_id:
+          type: string
+          format: uuid
+        action:
+          type: object
+          properties:
+            symbol:
+              type: string
+            side:
+              type: string
+              enum: [buy, sell]
+            qty:
+              type: number
+        proof:
+          type: object
+          required:
+            - proof_id
+            - hash
+            - ok
+            - var_value
+          properties:
+            proof_id:
+              type: string
+            hash:
+              type: string
+            ok:
+              type: boolean
+            var_value:
+              type: number
+        policy:
+          type: object
+          required:
+            - verdict_id
+            - allow
+          properties:
+            verdict_id:
+              type: string
+            allow:
+              type: boolean
+            reasons:
+              type: array
+              items:
+                type: string
+        trace_id:
+          type: string
