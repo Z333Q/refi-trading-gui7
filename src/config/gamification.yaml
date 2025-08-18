@@ -1,0 +1,184 @@
+# Gamification Configuration
+# This file defines levels, XP weights, badges, and quests for the ReFi.Trading platform
+
+levels:
+  - level: 1
+    xp_min: 0
+    soft_caps:
+      per_trade: 2000
+      per_symbol: 10000
+  - level: 2
+    xp_min: 500
+    soft_caps:
+      per_trade: 5000
+      per_symbol: 20000
+  - level: 3
+    xp_min: 1500
+    soft_caps:
+      per_trade: 10000
+      per_symbol: 30000  # never > ACE caps
+  - level: 4
+    xp_min: 3000
+    soft_caps:
+      per_trade: 15000
+      per_symbol: 50000
+  - level: 5
+    xp_min: 6000
+    soft_caps:
+      per_trade: 25000
+      per_symbol: 75000
+
+xp_weights:
+  preview: 5
+  risk_ok: 3
+  anchor_preview: 2
+  fill: 1
+  reduction_mode: 4
+  quiz_pass: 20
+  quiz_fail: 2
+  tour_complete: 10
+  streak_daily: 5
+  drift_improve: 8
+  onboarding: 15
+
+badges:
+  - code: "ONBOARD_COMPLETE"
+    name: "Welcome Aboard"
+    description: "Completed the onboarding flow and first trade preview"
+    icon: "🎯"
+    criteria:
+      type: "quest_complete"
+      quest: "FIRST_15_MIN"
+    
+  - code: "SAFE_MODE_SAVVY"
+    name: "Safe-Mode Savvy"
+    description: "Executed 10 exposure-reducing orders during degradation"
+    icon: "🛡️"
+    criteria:
+      type: "count"
+      source: "reduction_mode"
+      gte: 10
+      
+  - code: "PROOF_MASTER"
+    name: "Proof Master"
+    description: "Generated 50 successful zk-VaR proofs"
+    icon: "🔐"
+    criteria:
+      type: "count"
+      source: "risk_ok"
+      gte: 50
+      
+  - code: "EDUCATION_CHAMPION"
+    name: "Education Champion"
+    description: "Completed all education modules with certificates"
+    icon: "🎓"
+    criteria:
+      type: "certificates"
+      modules: ["market_basics", "proofs_and_policy", "strategy_ops"]
+      
+  - code: "STREAK_WARRIOR"
+    name: "Streak Warrior"
+    description: "Maintained a 30-day trading streak"
+    icon: "🔥"
+    criteria:
+      type: "streak"
+      days: 30
+
+quests:
+  - code: "FIRST_15_MIN"
+    name: "First 15 Minutes"
+    description: "Get started with ReFi.Trading - connect, learn, and trade safely"
+    segment: "power_retail"
+    reward_xp: 60
+    reward_badge: "ONBOARD_COMPLETE"
+    steps:
+      - type: "connect_broker"
+        target_count: 1
+        params: {}
+      - type: "complete_preview"
+        target_count: 1
+        params: {}
+      - type: "pass_quiz"
+        target_count: 1
+        params:
+          module: "market_basics"
+      - type: "tour_complete"
+        target_count: 1
+        params:
+          tour: "audit_anchors"
+          
+  - code: "RISK_MASTER"
+    name: "Risk Management Master"
+    description: "Demonstrate mastery of risk controls and safe trading"
+    segment: "prosumer"
+    reward_xp: 100
+    reward_badge: "PROOF_MASTER"
+    steps:
+      - type: "anchor_preview"
+        target_count: 10
+        params: {}
+      - type: "pass_quiz"
+        target_count: 1
+        params:
+          module: "proofs_and_policy"
+      - type: "reduce_in_safe_mode"
+        target_count: 3
+        params: {}
+        
+  - code: "EDUCATION_PATH"
+    name: "Complete Learning Path"
+    description: "Master all educational content and earn certificates"
+    segment: "power_retail"
+    reward_xp: 200
+    reward_badge: "EDUCATION_CHAMPION"
+    steps:
+      - type: "pass_quiz"
+        target_count: 1
+        params:
+          module: "market_basics"
+      - type: "pass_quiz"
+        target_count: 1
+        params:
+          module: "proofs_and_policy"
+      - type: "pass_quiz"
+        target_count: 1
+        params:
+          module: "strategy_ops"
+
+education_modules:
+  - code: "market_basics"
+    title: "Market Basics & Risk Management"
+    description: "Learn fundamental concepts of trading, order types, and VaR basics"
+    estimated_minutes: 45
+    passing_score: 70
+    
+  - code: "proofs_and_policy"
+    title: "zk-Proofs & ACE Policy"
+    description: "Understanding dual-proof gates, Base L2 anchors, and compliance guardrails"
+    estimated_minutes: 30
+    passing_score: 80
+    
+  - code: "strategy_ops"
+    title: "Strategy Operations & Safe Mode"
+    description: "Learn about RL agents, uncertainty thresholds, and risk reduction playbooks"
+    estimated_minutes: 60
+    passing_score: 75
+
+guide_tours:
+  - code: "audit_anchors"
+    title: "Understanding Audit Anchors"
+    description: "Learn how Base L2 anchors provide immutable proof of trading decisions"
+    trigger_event: "first_preview"
+    steps:
+      - action: "highlight"
+        ui_selector: "[data-testid='dual-proof-gate']"
+        text: "This is the Dual-Proof Gate - every trade must pass through here"
+      - action: "tooltip"
+        ui_selector: "[data-testid='zk-proof-section']"
+        text: "zk-VaR proofs ensure your risk is mathematically verified"
+      - action: "tooltip"
+        ui_selector: "[data-testid='ace-policy-section']"
+        text: "ACE policy ensures compliance with UAE/GCC regulations"
+      - action: "highlight"
+        ui_selector: "[data-testid='base-anchors']"
+        text: "Base L2 anchors create an immutable audit trail on-chain"

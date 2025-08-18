@@ -1,0 +1,460 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Core user and trading entities
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  accounts            Account[]
+  strategies          Strategy[]
+  gamificationProfile GamificationProfile?
+  xpEvents            XpEvent[]
+  userBadges          UserBadge[]
+  userQuests          UserQuest[]
+  streaks             Streak?
+  attempts            Attempt[]
+  certificates        Certificate[]
+  userTours           UserTour[]
+  userCheckItems      UserCheckItem[]
+  userLevelPolicy     UserLevelPolicy?
+
+  @@map("user")
+}
+
+model Account {
+  id       String @id @default(uuid())
+  userId   String @map("user_id")
+  provider String
+  type     String
+
+  user     User      @relation(fields: [userId], references: [id])
+  xpEvents XpEvent[]
+
+  @@map("account")
+}
+
+model Strategy {
+  id     String @id @default(uuid())
+  userId String @map("user_id")
+  name   String
+  type   String
+
+  user              User               @relation(fields: [userId], references: [id])
+  xpEvents          XpEvent[]
+  userQuestSteps    UserQuestStep[]
+
+  @@map("strategy")
+}
+
+// Gamification Core
+model GamificationProfile {
+  userId           String    @id @map("user_id")
+  level            Int       @default(1)
+  xpTotal          BigInt    @default(0) @map("xp_total")
+  streakDays       Int       @default(0) @map("streak_days")
+  lastActiveAt     DateTime? @map("last_active_at")
+  leaderboardOptIn Boolean   @default(false) @map("leaderboard_opt_in")
+  handle           String?   @unique
+  createdAt        DateTime  @default(now()) @map("created_at")
+  updatedAt        DateTime  @updatedAt @map("updated_at")
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@map("gamification_profile")
+}
+
+model XpEvent {
+  id          String   @id @default(uuid()) @map("xp_event_id")
+  userId      String   @map("user_id")
+  source      XpSource
+  sourceRefId String?  @map("source_ref_id")
+  accountId   String?  @map("account_id")
+  strategyId  String?  @map("strategy_id")
+  deltaXp     Int      @map("delta_xp")
+  meta        Json     @default("{}")
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  user     User      @relation(fields: [userId], references: [id])
+  account  Account?  @relation(fields: [accountId], references: [id])
+  strategy Strategy? @relation(fields: [strategyId], references: [id])
+
+  @@index([userId, createdAt(sort: Desc)])
+  @@map("xp_event")
+}
+
+model Badge {
+  id          String   @id @default(uuid()) @map("badge_id")
+  code        String   @unique
+  name        String
+  description String
+  icon        String?
+  criteria    Json
+  active      Boolean  @default(true)
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  userBadges UserBadge[]
+  quests     Quest[]
+
+  @@map("badge")
+}
+
+model UserBadge {
+  userId    String   @map("user_id")
+  badgeId   String   @map("badge_id")
+  awardedAt DateTime @default(now()) @map("awarded_at")
+
+  user  User  @relation(fields: [userId], references: [id])
+  badge Badge @relation(fields: [badgeId], references: [id])
+
+  @@id([userId, badgeId])
+  @@map("user_badge")
+}
+
+// Seasons, Quests, Steps
+model Season {
+  id      String   @id @default(uuid()) @map("season_id")
+  name    String
+  startAt DateTime @map("start_at")
+  endAt   DateTime @map("end_at")
+
+  quests               Quest[]
+  leaderboardSnapshots LeaderboardSnapshot[]
+
+  @@map("season")
+}
+
+model Quest {
+  id            String    @id @default(uuid()) @map("quest_id")
+  seasonId      String?   @map("season_id")
+  code          String    @unique
+  name          String
+  description   String
+  segment       Segment?
+  rewardXp      Int       @default(0) @map("reward_xp")
+  rewardBadgeId String?   @map("reward_badge_id")
+  startAt       DateTime? @map("start_at")
+  endAt         DateTime? @map("end_at")
+  active        Boolean   @default(true)
+
+  season      Season?     @relation(fields: [seasonId], references: [id])
+  rewardBadge Badge?      @relation(fields: [rewardBadgeId], references: [id])
+  steps       QuestStep[]
+  userQuests  UserQuest[]
+
+  @@map("quest")
+}
+
+model QuestStep {
+  id          String    @id @default(uuid()) @map("step_id")
+  questId     String    @map("quest_id")
+  ordinal     Int
+  stepType    StepType  @map("step_type")
+  targetCount Int       @default(1) @map("target_count")
+  params      Json      @default("{}")
+
+  quest          Quest           @relation(fields: [questId], references: [id])
+  userQuestSteps UserQuestStep[]
+
+  @@map("quest_step")
+}
+
+model UserQuest {
+  userId      String      @map("user_id")
+  questId     String      @map("quest_id")
+  status      QuestStatus
+  progress    Json        @default("{}")
+  startedAt   DateTime    @default(now()) @map("started_at")
+  completedAt DateTime?   @map("completed_at")
+
+  user  User  @relation(fields: [userId], references: [id])
+  quest Quest @relation(fields: [questId], references: [id])
+
+  @@id([userId, questId])
+  @@map("user_quest")
+}
+
+model UserQuestStep {
+  userId        String     @map("user_id")
+  stepId        String     @map("step_id")
+  countDone     Int        @default(0) @map("count_done")
+  status        StepStatus
+  lastUpdatedAt DateTime   @default(now()) @map("last_updated_at")
+  strategyId    String?    @map("strategy_id")
+
+  user     User      @relation(fields: [userId], references: [id])
+  step     QuestStep @relation(fields: [stepId], references: [id])
+  strategy Strategy? @relation(fields: [strategyId], references: [id])
+
+  @@id([userId, stepId])
+  @@map("user_quest_step")
+}
+
+// Streaks & Leaderboards
+model Streak {
+  userId      String @id @map("user_id")
+  currentDays Int    @default(0) @map("current_days")
+  longestDays Int    @default(0) @map("longest_days")
+  lastDay     DateTime? @map("last_day") @db.Date
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@map("streak")
+}
+
+model LeaderboardSnapshot {
+  id       String              @id @default(uuid()) @map("snapshot_id")
+  seasonId String?             @map("season_id")
+  scope    LeaderboardScope
+  takenAt  DateTime            @map("taken_at")
+  rows     Json // [{rank, handle, xp, badges}]
+
+  season Season? @relation(fields: [seasonId], references: [id])
+
+  @@map("leaderboard_snapshot")
+}
+
+// Education
+model EducationModule {
+  id               String @id @default(uuid()) @map("module_id")
+  code             String @unique
+  title            String
+  description      String
+  estimatedMinutes Int?   @map("estimated_minutes")
+  orderWeight      Int    @default(0) @map("order_weight")
+  passingScore     Int    @default(70) @map("passing_score")
+
+  lessons      Lesson[]
+  quizzes      Quiz[]
+  certificates Certificate[]
+
+  @@map("education_module")
+}
+
+model Lesson {
+  id        String @id @default(uuid()) @map("lesson_id")
+  moduleId  String @map("module_id")
+  title     String
+  mediaUrl  String? @map("media_url")
+  contentMd String? @map("content_md")
+  ordinal   Int
+
+  module EducationModule @relation(fields: [moduleId], references: [id])
+
+  @@map("lesson")
+}
+
+model Quiz {
+  id              String @id @default(uuid()) @map("quiz_id")
+  moduleId        String @map("module_id")
+  timeLimitSec    Int?   @map("time_limit_sec")
+  attemptsAllowed Int?   @default(0) @map("attempts_allowed")
+
+  module    EducationModule @relation(fields: [moduleId], references: [id])
+  questions Question[]
+  attempts  Attempt[]
+
+  @@map("quiz")
+}
+
+model Question {
+  id            String      @id @default(uuid()) @map("question_id")
+  quizId        String      @map("quiz_id")
+  kind          QuestionKind
+  stemMd        String      @map("stem_md")
+  choices       Json?
+  answerKey     Json        @map("answer_key")
+  explanationMd String?     @map("explanation_md")
+
+  quiz Quiz @relation(fields: [quizId], references: [id])
+
+  @@map("question")
+}
+
+model Attempt {
+  id          String   @id @default(uuid()) @map("attempt_id")
+  quizId      String   @map("quiz_id")
+  userId      String   @map("user_id")
+  scorePct    Int      @map("score_pct")
+  passed      Boolean
+  answers     Json
+  attemptedAt DateTime @default(now()) @map("attempted_at")
+
+  quiz Quiz @relation(fields: [quizId], references: [id])
+  user User @relation(fields: [userId], references: [id])
+
+  @@index([userId, quizId, attemptedAt(sort: Desc)])
+  @@map("attempt")
+}
+
+model Certificate {
+  id        String   @id @default(uuid()) @map("cert_id")
+  userId    String   @map("user_id")
+  moduleId  String   @map("module_id")
+  issuedAt  DateTime @default(now()) @map("issued_at")
+  anchorCid String?  @map("anchor_cid")
+
+  user   User            @relation(fields: [userId], references: [id])
+  module EducationModule @relation(fields: [moduleId], references: [id])
+
+  @@map("certificate")
+}
+
+// Guide & Onboarding
+model GuideTour {
+  id           String @id @default(uuid()) @map("tour_id")
+  code         String @unique
+  title        String
+  segment      String?
+  triggerEvent String? @map("trigger_event")
+  active       Boolean @default(true)
+
+  steps     GuideStep[]
+  userTours UserTour[]
+
+  @@map("guide_tour")
+}
+
+model GuideStep {
+  id         String @id @default(uuid()) @map("guide_step_id")
+  tourId     String @map("tour_id")
+  ordinal    Int
+  action     String
+  uiSelector String @map("ui_selector")
+  textMd     String @map("text_md")
+
+  tour GuideTour @relation(fields: [tourId], references: [id])
+
+  @@map("guide_step")
+}
+
+model UserTour {
+  userId      String     @map("user_id")
+  tourId      String     @map("tour_id")
+  status      TourStatus
+  startedAt   DateTime   @default(now()) @map("started_at")
+  completedAt DateTime?  @map("completed_at")
+
+  user User      @relation(fields: [userId], references: [id])
+  tour GuideTour @relation(fields: [tourId], references: [id])
+
+  @@id([userId, tourId])
+  @@map("user_tour")
+}
+
+model Checklist {
+  id      String @id @default(uuid()) @map("checklist_id")
+  title   String
+  segment String?
+
+  items ChecklistItem[]
+
+  @@map("checklist")
+}
+
+model ChecklistItem {
+  id          String @id @default(uuid()) @map("item_id")
+  checklistId String @map("checklist_id")
+  ordinal     Int
+  textMd      String @map("text_md")
+
+  checklist      Checklist       @relation(fields: [checklistId], references: [id])
+  userCheckItems UserCheckItem[]
+
+  @@map("checklist_item")
+}
+
+model UserCheckItem {
+  userId    String   @map("user_id")
+  itemId    String   @map("item_id")
+  checkedAt DateTime @default(now()) @map("checked_at")
+
+  user User          @relation(fields: [userId], references: [id])
+  item ChecklistItem @relation(fields: [itemId], references: [id])
+
+  @@id([userId, itemId])
+  @@map("user_check_item")
+}
+
+// Soft policy overlay (never above ACE caps)
+model UserLevelPolicy {
+  userId           String   @id @map("user_id")
+  perTradeSoftCap  Decimal? @map("per_trade_soft_cap") @db.Decimal(18, 2)
+  perSymbolSoftCap Decimal? @map("per_symbol_soft_cap") @db.Decimal(18, 2)
+  updatedAt        DateTime @default(now()) @map("updated_at")
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@map("user_level_policy")
+}
+
+// Enums
+enum XpSource {
+  preview
+  fill
+  quiz_pass
+  quiz_fail
+  tour_complete
+  onboarding
+  streak
+  risk_ok
+  reduction_mode
+  drift_improve
+}
+
+enum Segment {
+  power_retail
+  prosumer
+  fund_ops
+}
+
+enum StepType {
+  connect_broker
+  complete_preview
+  execute_checked_order
+  anchor_preview
+  pass_quiz
+  tour_complete
+  reduce_in_safe_mode
+}
+
+enum QuestStatus {
+  active
+  completed
+  expired
+}
+
+enum StepStatus {
+  pending
+  done
+}
+
+enum LeaderboardScope {
+  global
+  season
+}
+
+enum QuestionKind {
+  mcq
+  multi
+  numeric
+  bool
+}
+
+enum TourStatus {
+  active
+  completed
+  dismissed
+}
