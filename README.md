@@ -32,7 +32,13 @@ npx eslint src/lib/ace.ts src/lib/var.ts src/lib/supervisor.ts src/lib/anchor.ts
 Check for security vulnerabilities:
 
 ```bash
-npm audit
+npm run audit
+```
+
+Run the unit test suite:
+
+```bash
+npm test
 ```
 
 ### On-Chain Anchoring
