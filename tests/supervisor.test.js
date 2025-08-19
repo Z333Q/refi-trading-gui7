@@ -1,6 +1,6 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
-import { supervisorDecision } from '../dist/supervisor.js'
+import { supervisorDecision } from '../dist/lib/supervisor.js'
 
 test('approves when checks pass', () => {
   const decision = supervisorDecision({

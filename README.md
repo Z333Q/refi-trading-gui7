@@ -14,6 +14,8 @@ safe, non-custodial algorithmic trading.
   when downstream services degrade in `src/lib/supervisor.ts`.
 - **zkSync anchoring client** for committing previews and fills to an
   immutable audit trail in `src/lib/anchor.ts`.
+- **Anchoring worker scaffold** with start/stop hooks in
+  `src/workers/anchor.ts`.
 
 ## Development
 
@@ -26,7 +28,7 @@ npm install
 Run lint on the core modules:
 
 ```bash
-npx eslint src/lib/ace.ts src/lib/var.ts src/lib/supervisor.ts src/lib/anchor.ts src/types/api.ts
+npx eslint src/lib/ace.ts src/lib/var.ts src/lib/supervisor.ts src/lib/anchor.ts src/workers/anchor.ts src/types/api.ts
 ```
 
 Check for security vulnerabilities:
@@ -47,8 +49,9 @@ Configure environment variables for the anchor worker:
 
 ```bash
 export ANCHOR_RPC_URL="https://zksync-era.blockchain" # RPC endpoint
-export ANCHOR_CONTRACT="0xYourContract"             # IAuditAnchor address
+export ANCHOR_CONTRACT_ADDRESS="0xYourContract"     # IAuditAnchor address
 export ANCHOR_PRIVATE_KEY="0xYourKey"                # wallet key
+export ANCHOR_TIMEOUT_MS="10000"                     # optional timeout
 ```
 
 The `AnchorClient` in `src/lib/anchor.ts` uses these values to submit

@@ -1,4 +1,4 @@
-import { Contract, JsonRpcProvider, Wallet } from 'ethers'
+import { Contract, JsonRpcProvider, Wallet, TransactionReceipt } from 'ethers'
 
 const anchorAbi = [
   'function anchorPreview(bytes32 previewId, bytes32 proofCid, bytes32 verdictCid, bytes32 traceId)',
@@ -49,7 +49,7 @@ export class AnchorClient {
       const tx = await this.withTimeout(
         this.contract.anchorPreview(previewId, proofCid, verdictCid, traceId),
       )
-      const receipt = await this.withTimeout(tx.wait())
+      const receipt = (await this.withTimeout(tx.wait())) as TransactionReceipt
       return { txHash: receipt.hash }
     } catch {
       return { txHash: null }
@@ -67,7 +67,7 @@ export class AnchorClient {
       const tx = await this.withTimeout(
         this.contract.anchorFill(orderId, fillCid, deltaNotional, slippageBps, traceId),
       )
-      const receipt = await this.withTimeout(tx.wait())
+      const receipt = (await this.withTimeout(tx.wait())) as TransactionReceipt
       return { txHash: receipt.hash }
     } catch {
       return { txHash: null }
