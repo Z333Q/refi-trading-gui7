@@ -16,6 +16,8 @@ safe, non-custodial algorithmic trading.
   immutable audit trail in `src/lib/anchor.ts`.
 - **Anchoring worker scaffold** with start/stop hooks in
   `src/workers/anchor.ts`.
+- **NestJS API gateway skeleton** with stub endpoints in
+  `server/src/`.
 
 ## Development
 
@@ -41,6 +43,12 @@ Run the unit test suite:
 
 ```bash
 npm test
+```
+
+Run the API gateway (stubbed responses):
+
+```bash
+tsc server/src/main.ts --outDir dist-server && node dist-server/main.js
 ```
 
 ### On-Chain Anchoring
