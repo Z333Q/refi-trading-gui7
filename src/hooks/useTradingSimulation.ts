@@ -57,14 +57,14 @@ const POLYGON_API_KEY = import.meta.env.VITE_POLYGON_API_KEY || 'demo' // Use 'd
 
 // Base prices for realistic movement
 const BASE_PRICES: Record<string, number> = {
-  'AAPL': 202.38,
-  'TSLA': 302.63,
-  'NVDA': 173.72,
-  'MSFT': 524.11,
-  'GOOGL': 189.13,
-  'AMZN': 214.75,
-  'META': 750.01,
-  'NFLX': 1158.60
+  'AAPL': 225.47,   // September 17th, 2025 close
+  'TSLA': 267.89,   // September 17th, 2025 close
+  'NVDA': 142.33,   // September 17th, 2025 close
+  'MSFT': 431.82,   // September 17th, 2025 close
+  'GOOGL': 167.45,  // September 17th, 2025 close
+  'AMZN': 189.23,   // September 17th, 2025 close
+  'META': 582.16,   // September 17th, 2025 close
+  'NFLX': 692.84    // September 17th, 2025 close
 }
 
 export function useTradingSimulation() {
