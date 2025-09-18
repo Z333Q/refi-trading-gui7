@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 import { EducationModuleComponent } from '../../education/EducationModule'
+import { EducationalTradeGenerator } from '../../education/EducationalTradeGenerator'
+import { InteractiveEducationOverlay } from '../../education/InteractiveEducationOverlay'
+import { TradingConceptTooltip, useTradingConceptTooltip, ConceptLink } from '../../education/TradingConceptTooltip'
 import { Card, CardContent, CardHeader, CardTitle } from '../../ui/card'
 import { Button } from '../../ui/button'
 import { Badge } from '../../ui/badge'
@@ -11,7 +14,13 @@ import {
   Users,
   Target,
   CheckCircle,
-  Clock
+  Clock,
+  Brain,
+  Lightbulb,
+  Star,
+  Zap,
+  HelpCircle,
+  Play
 } from 'lucide-react'
 import type { EducationModule, QuizAttempt } from '@/types/gamification'
 
@@ -167,6 +176,19 @@ const mockUserProgress = {
 
 export function EducationSection() {
   const [selectedModule, setSelectedModule] = useState<string | null>(null)
+  const [showEducationOverlay, setShowEducationOverlay] = useState(false)
+  const [educationType, setEducationType] = useState<'dual-proof' | 'risk-management' | 'strategy-basics' | 'gamification'>('dual-proof')
+  const [totalXPEarned, setTotalXPEarned] = useState(0)
+  const [activeTab, setActiveTab] = useState<'modules' | 'interactive' | 'concepts'>('modules')
+  
+  const {
+    activeTooltip,
+    tooltipPosition,
+    showTooltip,
+    hideTooltip,
+    getConcept,
+    tradingConcepts
+  } = useTradingConceptTooltip()
 
   const handleStartLesson = (lessonId: string) => {
     console.log('Starting lesson:', lessonId)
@@ -176,6 +198,16 @@ export function EducationSection() {
   const handleStartQuiz = (quizId: string) => {
     console.log('Starting quiz:', quizId)
     // In real implementation, this would open quiz interface
+  }
+
+  const handleXPEarned = (xp: number) => {
+    setTotalXPEarned(prev => prev + xp)
+    console.log(`Earned ${xp} XP from educational content`)
+  }
+
+  const handleShowEducation = (type: 'dual-proof' | 'risk-management' | 'strategy-basics' | 'gamification') => {
+    setEducationType(type)
+    setShowEducationOverlay(true)
   }
 
   const totalModules = mockEducationModules.length
