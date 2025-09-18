@@ -35,14 +35,14 @@ export function LivePortfolioMetrics({ metrics, latencyMetrics }: LivePortfolioM
       title: 'Portfolio Value',
       value: formatCurrency(metrics.totalValue),
       change: formatPercent(metrics.totalPnlPercent),
-      positive: metrics.totalPnl >= 0,
+      positive: metrics.totalPnlPercent >= 0,
       icon: DollarSign,
     },
     {
       title: 'Daily P&L',
       value: formatCurrency(metrics.dailyPnl),
       change: formatPercent(metrics.dailyPnlPercent),
-      positive: metrics.dailyPnl >= 0,
+      positive: metrics.dailyPnlPercent >= 0,
       icon: metrics.dailyPnl >= 0 ? TrendingUp : TrendingDown,
     },
     {

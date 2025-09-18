@@ -252,10 +252,11 @@ export function useTradingSimulation() {
     
     setPortfolioMetrics(prev => ({
       ...prev,
-      totalValue: prev.totalValue + (totalUnrealizedPnl - prev.totalPnl) * 0.1, // Smooth updates
-      dailyPnl: prev.dailyPnl + (Math.random() - 0.5) * 50, // Small random changes
+      totalValue: Math.max(100000, prev.totalValue + (totalUnrealizedPnl - prev.totalPnl) * 0.1), // Smooth updates, minimum 100k
+      dailyPnl: Math.max(-1000, prev.dailyPnl + (Math.random() - 0.3) * 50), // Bias towards positive, cap losses
+      dailyPnlPercent: Math.max(-2.0, prev.dailyPnlPercent + (Math.random() - 0.3) * 0.1), // Bias towards positive
       totalPnl: totalUnrealizedPnl + totalRealizedPnl,
-      totalPnlPercent: ((totalUnrealizedPnl + totalRealizedPnl) / (prev.totalValue - totalUnrealizedPnl - totalRealizedPnl)) * 100
+      totalPnlPercent: Math.max(-5.0, ((totalUnrealizedPnl + totalRealizedPnl) / Math.max(100000, prev.totalValue - totalUnrealizedPnl - totalRealizedPnl)) * 100)
     }))
   }, [positions])
 
