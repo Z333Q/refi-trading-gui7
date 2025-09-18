@@ -49,7 +49,7 @@ interface PortfolioMetrics {
   riskScore: number
 }
 
-const SYMBOLS = ['AAPL', 'TSLA', 'NVDA', 'MSFT', 'GOOGL', 'AMZN', 'META', 'NFLX']
+const SYMBOLS = ['AAPL', 'TSLA', 'NVDA', 'META', 'NFLX', 'GOOGL', 'COIN', 'ABNB', 'BAC', 'JPM', 'INTC', 'PYPL']
 const STRATEGIES = ['PPO Momentum', 'TD3 Mean Reversion', 'RVI-Q Swing']
 
 // Polygon.io API key - in production, this should come from environment variables
@@ -57,14 +57,25 @@ const POLYGON_API_KEY = import.meta.env.VITE_POLYGON_API_KEY || 'demo' // Use 'd
 
 // Base prices for realistic movement
 const BASE_PRICES: Record<string, number> = {
-  'AAPL': 225.47,   // September 17th, 2025 close
-  'TSLA': 267.89,   // September 17th, 2025 close
-  'NVDA': 142.33,   // September 17th, 2025 close
-  'MSFT': 431.82,   // September 17th, 2025 close
-  'GOOGL': 167.45,  // September 17th, 2025 close
-  'AMZN': 189.23,   // September 17th, 2025 close
-  'META': 582.16,   // September 17th, 2025 close
-  'NFLX': 692.84    // September 17th, 2025 close
+  'AAPL': 238.99,   // September 17th, 2025 close
+  'TSLA': 425.86,   // September 17th, 2025 close
+  'NVDA': 170.29,   // September 17th, 2025 close
+  'MSFT': 431.82,   // September 17th, 2025 close (estimated)
+  'GOOGL': 249.53,  // September 17th, 2025 close (GOOG)
+  'AMZN': 189.23,   // September 17th, 2025 close (estimated)
+  'META': 775.72,   // September 17th, 2025 close
+  'NFLX': 1228.50,  // September 17th, 2025 close
+  'ABNB': 123.20,   // September 17th, 2025 close
+  'AAL': 12.48,     // September 17th, 2025 close
+  'BAC': 51.40,     // September 17th, 2025 close
+  'COIN': 320.56,   // September 17th, 2025 close
+  'COST': 963.03,   // September 17th, 2025 close
+  'F': 11.66,       // September 17th, 2025 close
+  'GE': 289.63,     // September 17th, 2025 close
+  'GM': 58.76,      // September 17th, 2025 close
+  'INTC': 24.90,    // September 17th, 2025 close
+  'JPM': 311.75,    // September 17th, 2025 close
+  'PYPL': 68.62     // September 17th, 2025 close
 }
 
 export function useTradingSimulation() {
@@ -137,8 +148,8 @@ export function useTradingSimulation() {
           {
             symbol: 'AAPL',
             quantity: 100,
-            avgPrice: 176.23,
-            currentPrice: initialMarketData.find(d => d.symbol === 'AAPL')?.price || 178.45,
+            avgPrice: 235.45,
+            currentPrice: initialMarketData.find(d => d.symbol === 'AAPL')?.price || 238.99,
             unrealizedPnl: 0,
             realizedPnl: 0,
             side: 'long'
@@ -146,17 +157,17 @@ export function useTradingSimulation() {
           {
             symbol: 'TSLA',
             quantity: 50,
-            avgPrice: 245.67,
-            currentPrice: initialMarketData.find(d => d.symbol === 'TSLA')?.price || 242.18,
+            avgPrice: 420.34,
+            currentPrice: initialMarketData.find(d => d.symbol === 'TSLA')?.price || 425.86,
             unrealizedPnl: 0,
             realizedPnl: 0,
             side: 'long'
           },
           {
-            symbol: 'NVDA',
+            symbol: 'META',
             quantity: 25,
-            avgPrice: 452.34,
-            currentPrice: initialMarketData.find(d => d.symbol === 'NVDA')?.price || 456.78,
+            avgPrice: 770.15,
+            currentPrice: initialMarketData.find(d => d.symbol === 'META')?.price || 775.72,
             unrealizedPnl: 0,
             realizedPnl: 0,
             side: 'long'
