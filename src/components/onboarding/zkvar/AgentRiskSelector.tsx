@@ -50,7 +50,7 @@ const riskTierDefinitions = {
     icon: Shield,
     color: 'green',
     maxVaR: '2%',
-    expectedReturn: '5-8%',
+    estimatedReturn: '5-8%',
     volatility: 'Low',
     description: 'Focus on capital preservation with minimal risk exposure',
     characteristics: [
@@ -76,7 +76,7 @@ const riskTierDefinitions = {
     icon: BarChart3,
     color: 'blue',
     maxVaR: '5%',
-    expectedReturn: '8-15%',
+    estimatedReturn: '8-15%',
     volatility: 'Medium',
     description: 'Balanced approach between growth and risk management',
     characteristics: [
@@ -103,7 +103,7 @@ const riskTierDefinitions = {
     icon: TrendingUp,
     color: 'red',
     maxVaR: '10%',
-    expectedReturn: '15-25%',
+    estimatedReturn: '15-25%',
     volatility: 'High',
     description: 'Maximum growth potential with higher risk tolerance',
     characteristics: [
@@ -259,7 +259,7 @@ export function AgentRiskSelector({ onConfigurationComplete, userRiskProfile }: 
                   </div>
                   <div>
                     <span className="text-gray-400">Expected Return:</span>
-                    <div className="font-medium">{tierDef.expectedReturn}</div>
+                    <div className="font-medium">{tierDef.estimatedReturn}</div>
                   </div>
                   <div>
                     <span className="text-gray-400">Volatility:</span>
@@ -450,9 +450,9 @@ export function AgentRiskSelector({ onConfigurationComplete, userRiskProfile }: 
             </div>
             <div className="text-center">
               <div className={`text-2xl font-bold text-${currentTierDef.color}-400`}>
-                {currentTierDef.expectedReturn}
+                {currentTierDef.estimatedReturn}
               </div>
-              <div className="text-sm text-gray-400">Expected Return</div>
+              <div className="text-sm text-gray-400">Estimated Return</div>
             </div>
           </div>
         </CardContent>
@@ -469,6 +469,23 @@ export function AgentRiskSelector({ onConfigurationComplete, userRiskProfile }: 
           Deploy Selected Agents
         </Button>
       </div>
+
+      {/* Legal Disclaimers */}
+      <Card className="bg-amber-950/20 border-amber-800">
+        <CardContent className="p-4">
+          <div className="space-y-3 text-xs text-amber-300">
+            <div className="font-semibold text-amber-400">Important Disclaimers:</div>
+            <ul className="space-y-1 list-disc list-inside">
+              <li>Past performance does not guarantee future results. All trading involves risk of loss.</li>
+              <li>Estimated returns are projections based on historical data and may not reflect actual future performance.</li>
+              <li>Zero-knowledge proofs verify risk compliance but do not eliminate market risk or guarantee profits.</li>
+              <li>High-risk agents may result in substantial losses. Only invest what you can afford to lose.</li>
+              <li>This platform is not suitable for all investors. Consider your financial situation and risk tolerance.</li>
+              <li>Regulatory compliance varies by jurisdiction. Ensure compliance with local laws before trading.</li>
+            </ul>
+          </div>
+        </CardContent>
+      </Card>
 
       {!canProceed() && (
         <div className="text-center text-sm text-amber-400">
