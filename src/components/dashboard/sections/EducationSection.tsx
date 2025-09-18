@@ -402,7 +402,29 @@ export function EducationSection() {
             </div>
           </div>
         </CardContent>
+
+      {/* Trading Concept Tooltip */}
+      {activeTooltip && (
+        <TradingConceptTooltip
+          concept={getConcept(activeTooltip)!}
+          isVisible={true}
+          onClose={hideTooltip}
+          onLearnMore={(conceptId) => {
+            console.log('Learn more about:', conceptId)
+            hideTooltip()
+          }}
+          onClaimXP={handleXPEarned}
+          position={tooltipPosition}
+        />
+      )}
       </Card>
+      {/* Interactive Education Overlay */}
+      <InteractiveEducationOverlay
+        isVisible={showEducationOverlay}
+        onClose={() => setShowEducationOverlay(false)}
+        onXPEarned={handleXPEarned}
+        educationType={educationType}
+      />
     </div>
   )
 }
