@@ -501,6 +501,23 @@ export function ZkVarEducationModule({ onComplete, onSkip }: EducationModuleProp
                   <ArrowRight className="h-4 w-4 ml-2" />
                 </Button>
               </div>
+              
+              {/* Legal Disclaimer */}
+              <Card className="bg-amber-950/20 border-amber-800">
+                <CardContent className="p-4">
+                  <div className="text-xs text-amber-300">
+                    <div className="font-semibold text-amber-400 mb-2">Educational Disclaimer:</div>
+                    <p className="mb-2">
+                      This educational content is for informational purposes only and does not constitute financial advice. 
+                      Trading involves substantial risk of loss and may not be suitable for all investors.
+                    </p>
+                    <p>
+                      Past performance shown in examples does not guarantee future results. All estimated returns 
+                      are projections based on historical data and should not be considered as promises or guarantees.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
             </CardContent>
           </Card>
         </TabsContent>

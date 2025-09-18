@@ -22,7 +22,7 @@ export interface AgentConfig {
   allocation: number
   status: 'active' | 'paused' | 'stopped'
   maxVaR: number
-  expectedReturn: [number, number] // min, max range
+  estimatedReturn: [number, number] // min, max range - not guaranteed
   volatility: 'low' | 'medium' | 'high'
   performance?: {
     return: number
