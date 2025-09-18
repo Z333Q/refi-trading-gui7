@@ -3,10 +3,12 @@ import { useAccount } from 'wagmi'
 import { useTradingSimulation } from '@/hooks/useTradingSimulation'
 import { LivePortfolioMetrics } from '../../trading/LivePortfolioMetrics'
 import { LiveMarketData } from '../../trading/LiveMarketData'
-import { LiveTradesFeed } from '../../trading/LiveTradesFeed'
+import { EnhancedLiveTradesFeed } from '../../trading/EnhancedLiveTradesFeed'
 import { LivePositions } from '../../trading/LivePositions'
 import { DualProofGateComponent } from '../../trading/DualProofGate'
 import { GamificationPanel } from '../../gamification/GamificationPanel'
+import { EducationalTradeGenerator } from '../../education/EducationalTradeGenerator'
+import { InteractiveEducationOverlay } from '../../education/InteractiveEducationOverlay'
 import { ZkVarOnboardingFlow } from '../../onboarding/zkvar'
 import { Card, CardContent, CardHeader, CardTitle } from '../../ui/card'
 import { Badge } from '../../ui/badge'
@@ -104,6 +106,9 @@ const mockSafeModeStatus: SafeModeStatus = {
 export function OverviewSection() {
   const { address, isConnected } = useAccount()
   const [showZkVarOnboarding, setShowZkVarOnboarding] = useState(false)
+  const [totalXPEarned, setTotalXPEarned] = useState(0)
+  const [showEducationOverlay, setShowEducationOverlay] = useState(false)
+  const [educationType, setEducationType] = useState<'dual-proof' | 'risk-management' | 'strategy-basics' | 'gamification'>('dual-proof')
   const {
     trades,
     positions,
@@ -122,6 +127,17 @@ export function OverviewSection() {
   const handleZkVarOnboardingComplete = (config: any) => {
     console.log('zk-VaR configuration completed:', config)
     setShowZkVarOnboarding(false)
+  }
+
+  const handleXPEarned = (xp: number) => {
+    setTotalXPEarned(prev => prev + xp)
+    // In real implementation, this would update the user's XP in the database
+    console.log(`Earned ${xp} XP from educational content`)
+  }
+
+  const handleShowEducation = (type: 'dual-proof' | 'risk-management' | 'strategy-basics' | 'gamification') => {
+    setEducationType(type)
+    setShowEducationOverlay(true)
   }
 
   if (showZkVarOnboarding) {
@@ -185,9 +201,9 @@ export function OverviewSection() {
                   variant="outline" 
                   size="sm" 
                   className="mt-2 border-emerald-600 text-emerald-400 hover:bg-emerald-950/20"
-                  onClick={() => console.log('Learn about non-custodial trading')}
+                  onClick={() => handleShowEducation('strategy-basics')}
                 >
-                  Learn More
+                  Learn Security Basics
                 </Button>
               </div>
             </div>
@@ -207,9 +223,9 @@ export function OverviewSection() {
                   variant="outline" 
                   size="sm" 
                   className="mt-2 border-blue-600 text-blue-400 hover:bg-blue-950/20"
-                  onClick={() => setShowZkVarOnboarding(true)}
+                  onClick={() => handleShowEducation('dual-proof')}
                 >
-                  Configure zk-VaR
+                  Learn Dual-Proof
                 </Button>
               </div>
             </div>
@@ -229,9 +245,9 @@ export function OverviewSection() {
                   variant="outline" 
                   size="sm" 
                   className="mt-2 border-purple-600 text-purple-400 hover:bg-purple-950/20"
-                  onClick={() => console.log('Start gamified learning')}
+                  onClick={() => handleShowEducation('gamification')}
                 >
-                  Start Learning
+                  Learn XP System
                 </Button>
               </div>
             </div>
@@ -255,7 +271,10 @@ export function OverviewSection() {
 
           {/* Trading Data Grid */}
           <div className="grid gap-6 lg:grid-cols-2">
-            <LiveTradesFeed trades={trades} />
+            <div className="space-y-4">
+              <EnhancedLiveTradesFeed trades={trades} onXPEarned={handleXPEarned} />
+              <EducationalTradeGenerator onXPEarned={handleXPEarned} />
+            </div>
             <LivePositions positions={positions} />
           </div>
         </div>
@@ -267,6 +286,25 @@ export function OverviewSection() {
             connectionStatus={connectionStatus}
             error={polygonError}
           />
+          
+          {/* XP Tracker */}
+          {totalXPEarned > 0 && (
+            <Card className="bg-gradient-to-r from-yellow-950/30 to-orange-950/30 border-yellow-800">
+              <CardContent className="p-4 text-center">
+                <div className="flex items-center justify-center space-x-2 mb-2">
+                  <Star className="h-5 w-5 text-yellow-500" />
+                  <span className="font-bold text-yellow-400">Session XP</span>
+                </div>
+                <div className="text-2xl font-bold text-yellow-400">
+                  +{totalXPEarned}
+                </div>
+                <p className="text-xs text-gray-400">
+                  Earned from educational content
+                </p>
+              </CardContent>
+            </Card>
+          )}
+          
           <div className="lg:block xl:hidden">
             <GamificationPanel
               profile={mockGamificationProfile}
@@ -279,6 +317,14 @@ export function OverviewSection() {
           </div>
         </div>
       </div>
+
+      {/* Interactive Education Overlay */}
+      <InteractiveEducationOverlay
+        isVisible={showEducationOverlay}
+        onClose={() => setShowEducationOverlay(false)}
+        onXPEarned={handleXPEarned}
+        educationType={educationType}
+      />
     </div>
   )
 }
