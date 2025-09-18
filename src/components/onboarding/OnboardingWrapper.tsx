@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useAccount } from 'wagmi'
 import { FirstTimeVisitorOverlay } from './FirstTimeVisitorOverlay'
 import { OnboardingFlow } from './OnboardingFlow'
+import { ZkVarOnboardingFlow } from './zkvar'
 import { PersistentPopoutTab } from '../ui/PersistentPopoutTab'
 import { Card, CardContent, CardHeader, CardTitle } from '../ui/card'
 import { Button } from '../ui/button'
@@ -12,7 +13,9 @@ import {
   Building, 
   ArrowRight,
   CheckCircle,
-  Activity
+  Activity,
+  Shield,
+  Calculator
 } from 'lucide-react'
 
 interface OnboardingWrapperProps {
@@ -22,6 +25,7 @@ interface OnboardingWrapperProps {
 export function OnboardingWrapper({ onComplete }: OnboardingWrapperProps) {
   const [userType, setUserType] = useState<'individual' | 'dao' | 'institutional' | null>(null)
   const [showOnboarding, setShowOnboarding] = useState(false)
+  const [showZkVarOnboarding, setShowZkVarOnboarding] = useState(false)
   const [showFirstTimeOverlay, setShowFirstTimeOverlay] = useState(true)
   const { isConnected } = useAccount()
 
@@ -46,8 +50,8 @@ export function OnboardingWrapper({ onComplete }: OnboardingWrapperProps) {
       features: [
         'Personal wallet connection',
         'Alpaca Markets integration',
-        'AI trading strategies',
-        'Risk management tools'
+        'zk-VaR risk management',
+        'AI trading agents'
       ],
       setupTime: '10-15 minutes'
     },
@@ -59,8 +63,8 @@ export function OnboardingWrapper({ onComplete }: OnboardingWrapperProps) {
       features: [
         'SAFE multisig integration',
         'Governance voting',
-        'Treasury management',
-        'Member permissions'
+        'zk-VaR compliance',
+        'Multi-signature trading'
       ],
       setupTime: '15-25 minutes'
     },
@@ -72,10 +76,23 @@ export function OnboardingWrapper({ onComplete }: OnboardingWrapperProps) {
       features: [
         'Advanced compliance',
         'Custom integrations',
-        'Dedicated support',
-        'Enhanced security'
+        'Enterprise zk-VaR',
+        'Institutional support'
       ],
       setupTime: '20-30 minutes'
+    },
+    {
+      id: 'zkvar-specialist' as const,
+      title: 'zk-VaR Specialist',
+      description: 'Advanced zero-knowledge risk management setup',
+      icon: Shield,
+      features: [
+        'Advanced zk-VaR configuration',
+        'Custom risk parameters',
+        'Agent deployment selection',
+        'Privacy-preserving compliance'
+      ],
+      setupTime: '25-35 minutes'
     }
   ]
 
@@ -89,6 +106,21 @@ export function OnboardingWrapper({ onComplete }: OnboardingWrapperProps) {
     setShowOnboarding(false)
     setShowFirstTimeOverlay(false)
     onComplete()
+  }
+
+  const handleZkVarOnboardingComplete = (config: any) => {
+    console.log('zk-VaR configuration:', config)
+    setShowZkVarOnboarding(false)
+    onComplete()
+  }
+
+  if (showZkVarOnboarding) {
+    return (
+      <ZkVarOnboardingFlow 
+        onComplete={handleZkVarOnboardingComplete}
+        onBack={() => setShowZkVarOnboarding(false)}
+      />
+    )
   }
 
   if (showOnboarding && userType) {
@@ -164,7 +196,7 @@ export function OnboardingWrapper({ onComplete }: OnboardingWrapperProps) {
               Choose Your Account Type
             </h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {userTypes.map((type) => {
                 const Icon = type.icon
                 return (
@@ -207,6 +239,29 @@ export function OnboardingWrapper({ onComplete }: OnboardingWrapperProps) {
                   </Card>
                 )
               })}
+            </div>
+            
+            {/* Quick Access to zk-VaR */}
+            <div className="mt-8 text-center">
+              <Card className="bg-gradient-to-r from-blue-950/30 to-purple-950/30 border-blue-700 hover:border-blue-600 transition-colors cursor-pointer max-w-md mx-auto"
+                    onClick={() => setShowZkVarOnboarding(true)}>
+                <CardContent className="p-6">
+                  <div className="flex items-center justify-center space-x-3 mb-3">
+                    <Shield className="h-8 w-8 text-blue-500" />
+                    <Calculator className="h-8 w-8 text-purple-500" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-blue-400 mb-2">
+                    Advanced zk-VaR Setup
+                  </h3>
+                  <p className="text-sm text-gray-400 mb-4">
+                    Skip basic setup and go directly to advanced zero-knowledge risk management configuration
+                  </p>
+                  <Button variant="outline" className="w-full border-blue-600 text-blue-400 hover:bg-blue-950/20">
+                    Configure zk-VaR Agents
+                    <ArrowRight className="h-4 w-4 ml-2" />
+                  </Button>
+                </CardContent>
+              </Card>
             </div>
           </div>
 

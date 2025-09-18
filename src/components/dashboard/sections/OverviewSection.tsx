@@ -7,8 +7,10 @@ import { LiveTradesFeed } from '../../trading/LiveTradesFeed'
 import { LivePositions } from '../../trading/LivePositions'
 import { DualProofGateComponent } from '../../trading/DualProofGate'
 import { GamificationPanel } from '../../gamification/GamificationPanel'
+import { ZkVarOnboardingFlow } from '../../onboarding/zkvar'
 import { Card, CardContent, CardHeader, CardTitle } from '../../ui/card'
 import { Badge } from '../../ui/badge'
+import { Button } from '../../ui/button'
 import { TrendingUp, TrendingDown, Activity, Shield, Wallet, Trophy } from 'lucide-react'
 import { Lock } from '../../icons'
 import type { DualProofGate, SafeModeStatus, GamificationProfile, UserBadge, UserQuest, XPEvent } from '@/types/trading'
@@ -101,6 +103,7 @@ const mockSafeModeStatus: SafeModeStatus = {
 
 export function OverviewSection() {
   const { address, isConnected } = useAccount()
+  const [showZkVarOnboarding, setShowZkVarOnboarding] = useState(false)
   const {
     trades,
     positions,
@@ -115,6 +118,20 @@ export function OverviewSection() {
     polygonError,
     isInitialized
   } = useTradingSimulation()
+
+  const handleZkVarOnboardingComplete = (config: any) => {
+    console.log('zk-VaR configuration completed:', config)
+    setShowZkVarOnboarding(false)
+  }
+
+  if (showZkVarOnboarding) {
+    return (
+      <ZkVarOnboardingFlow 
+        onComplete={handleZkVarOnboardingComplete}
+        onBack={() => setShowZkVarOnboarding(false)}
+      />
+    )
+  }
 
   return (
     <div className="space-y-6">
@@ -178,6 +195,14 @@ export function OverviewSection() {
                 <p className="text-sm text-gray-300">
                   Every trade verified by zk-VaR proofs and ACE policy compliance before execution.
                 </p>
+                <Button 
+                  variant="outline" 
+                  size="sm" 
+                  className="mt-2 border-blue-600 text-blue-400 hover:bg-blue-950/20"
+                  onClick={() => setShowZkVarOnboarding(true)}
+                >
+                  Configure zk-VaR
+                </Button>
               </div>
             </div>
           </CardContent>
