@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useAccount } from 'wagmi'
 import { useTradingSimulation } from '@/hooks/useTradingSimulation'
 import { LivePortfolioMetrics } from '../../trading/LivePortfolioMetrics'
