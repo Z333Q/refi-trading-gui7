@@ -181,6 +181,14 @@ export function OverviewSection() {
                 <p className="text-sm text-gray-300">
                   Your private keys remain secure. We never hold your funds - trade with complete ownership and control.
                 </p>
+                <Button 
+                  variant="outline" 
+                  size="sm" 
+                  className="mt-2 border-emerald-600 text-emerald-400 hover:bg-emerald-950/20"
+                  onClick={() => console.log('Learn about non-custodial trading')}
+                >
+                  Learn More
+                </Button>
               </div>
             </div>
           </CardContent>
@@ -217,6 +225,14 @@ export function OverviewSection() {
                 <p className="text-sm text-gray-300">
                   Earn XP, unlock badges, complete quests, and level up your trading expertise.
                 </p>
+                <Button 
+                  variant="outline" 
+                  size="sm" 
+                  className="mt-2 border-purple-600 text-purple-400 hover:bg-purple-950/20"
+                  onClick={() => console.log('Start gamified learning')}
+                >
+                  Start Learning
+                </Button>
               </div>
             </div>
           </CardContent>
