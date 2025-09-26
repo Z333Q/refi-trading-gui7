@@ -2,6 +2,7 @@ import React from 'react'
 import { useDisconnect } from 'wagmi'
 import { Button } from '../ui/button'
 import { Badge } from '../ui/badge'
+import { LanguageSelector } from '../ui/LanguageSelector'
 import { WalletConnect } from '../wallet/WalletConnect'
 import { 
   Activity, 
