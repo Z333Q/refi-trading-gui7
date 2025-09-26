@@ -64,6 +64,9 @@ export function Header({ onMenuClick }: HeaderProps) {
             </div>
           </div>
 
+          {/* Language Selector */}
+          <LanguageSelector />
+
           {/* Notifications */}
           <Button variant="ghost" size="icon">
             <Bell className="h-4 w-4" />

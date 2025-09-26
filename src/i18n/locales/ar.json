@@ -1,0 +1,120 @@
+{
+  "common": {
+    "loading": "جاري التحميل...",
+    "error": "خطأ",
+    "success": "نجح",
+    "cancel": "إلغاء",
+    "save": "حفظ",
+    "delete": "حذف",
+    "edit": "تعديل",
+    "view": "عرض",
+    "close": "إغلاق",
+    "next": "التالي",
+    "previous": "السابق",
+    "continue": "متابعة",
+    "complete": "إكمال",
+    "start": "بدء",
+    "stop": "إيقاف",
+    "pause": "إيقاف مؤقت",
+    "resume": "استئناف"
+  },
+  "navigation": {
+    "overview": "نظرة عامة",
+    "strategies": "الاستراتيجيات",
+    "positions": "المراكز",
+    "orders": "الأوامر",
+    "education": "التعليم",
+    "riskMonitor": "مراقب المخاطر",
+    "auditTrail": "سجل التدقيق",
+    "compliance": "الامتثال",
+    "gamification": "التقدم",
+    "performance": "الأداء",
+    "latency": "زمن الاستجابة",
+    "alerts": "التنبيهات",
+    "settings": "الإعدادات",
+    "help": "المساعدة"
+  },
+  "trading": {
+    "portfolio": {
+      "value": "قيمة المحفظة",
+      "dailyPnl": "الربح والخسارة اليومية",
+      "totalPnl": "إجمالي الربح والخسارة",
+      "buyingPower": "القوة الشرائية",
+      "marginUsed": "الهامش المستخدم",
+      "riskScore": "نقاط المخاطر"
+    },
+    "positions": {
+      "title": "المراكز المباشرة",
+      "noPositions": "لا توجد مراكز مفتوحة",
+      "totalUnrealizedPnl": "إجمالي الربح والخسارة غير المحققة",
+      "quantity": "الكمية",
+      "avgPrice": "متوسط السعر",
+      "currentPrice": "السعر الحالي",
+      "marketValue": "القيمة السوقية"
+    },
+    "orders": {
+      "title": "الأوامر",
+      "buy": "شراء",
+      "sell": "بيع",
+      "pending": "معلق",
+      "filled": "منفذ",
+      "cancelled": "ملغي"
+    },
+    "strategies": {
+      "title": "استراتيجيات التداول",
+      "active": "نشط",
+      "paused": "متوقف مؤقتاً",
+      "stopped": "متوقف",
+      "ppoMomentum": "زخم PPO",
+      "td3MeanReversion": "انعكاس المتوسط TD3",
+      "rviQSwing": "تداول التأرجح RVI-Q"
+    }
+  },
+  "education": {
+    "title": "التعليم والشهادات",
+    "subtitle": "إتقان مفاهيم التداول المتقدمة من خلال التعلم التفاعلي",
+    "modules": "الوحدات",
+    "interactive": "تفاعلي",
+    "concepts": "المفاهيم",
+    "progress": "تقدم التعلم",
+    "completion": "الإنجاز الإجمالي",
+    "certificates": "الشهادات المكتسبة",
+    "lessons": "الدروس المكتملة",
+    "xpPoints": "نقاط الخبرة المكتسبة",
+    "recommendedPath": "مسار التعلم الموصى به",
+    "generateTrade": "إنشاء صفقة تعليمية",
+    "learnFromTrade": "تعلم من الصفقة",
+    "xpReward": "مكافأة نقاط الخبرة"
+  },
+  "gamification": {
+    "title": "التقدم والإنجازات",
+    "subtitle": "طور مهاراتك في التداول من خلال التعلم التفاعلي",
+    "level": "المستوى",
+    "xp": "نقاط الخبرة",
+    "streak": "سلسلة أيام",
+    "badges": "الشارات",
+    "quests": "المهام",
+    "leaderboard": "لوحة المتصدرين",
+    "achievements": "الشارات",
+    "profile": "الملف الشخصي",
+    "softCaps": "الحدود المرنة",
+    "recentXp": "نقاط الخبرة الأخيرة",
+    "activeQuests": "المهام النشطة",
+    "availableQuests": "المهام المتاحة",
+    "browseQuests": "تصفح المهام",
+    "sessionXp": "نقاط خبرة الجلسة",
+    "earnedFrom": "مكتسبة من المحتوى التعليمي"
+  },
+  "dualProof": {
+    "title": "نظام البوابة المزدوجة الإثبات",
+    "zkProof": "إثبات VaR بدون معرفة",
+    "acePolicy": "محرك الامتثال ACE",
+    "auditTrail": "مسار التدقيق على البلوك تشين",
+    "generate": "إنشاء التحقق من المخاطر والامتثال",
+    "generating": "جاري إنشاء الإثباتات الرياضية...",
+    "verified": "تم التحقق",
+    "approved": "موافق عليه",
+    "anchored": "مثبت",
+    "pending": "معلق"
+  }
+}

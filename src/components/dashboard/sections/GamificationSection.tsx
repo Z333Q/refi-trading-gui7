@@ -139,6 +139,7 @@ const mockLeaderboard = [
 ]
 
 export function GamificationSection() {
+  const { t } = useTranslation()
   const [activeTab, setActiveTab] = useState('overview')
   const [profile, setProfile] = useState(mockProfile)
 
@@ -170,9 +171,9 @@ export function GamificationSection() {
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-2xl font-bold mb-2">Progress & Achievements</h2>
+        <h2 className="text-2xl font-bold mb-2">{t('gamification.title')}</h2>
         <p className="text-gray-600 dark:text-gray-400">
-          Level up your trading skills through gamified learning. Complete interactive quests, earn XP points, unlock exclusive badges, and climb the global leaderboards while mastering non-custodial RL trading.
+          {t('gamification.subtitle')}
         </p>
       </div>
 
@@ -184,15 +185,15 @@ export function GamificationSection() {
           </TabsTrigger>
           <TabsTrigger value="quests" className="flex items-center space-x-2">
             <Target className="h-4 w-4" />
-            <span className="hidden sm:inline">Quests</span>
+            <span className="hidden sm:inline">{t('gamification.quests')}</span>
           </TabsTrigger>
           <TabsTrigger value="leaderboard" className="flex items-center space-x-2">
             <Users className="h-4 w-4" />
-            <span className="hidden sm:inline">Leaderboard</span>
+            <span className="hidden sm:inline">{t('gamification.leaderboard')}</span>
           </TabsTrigger>
           <TabsTrigger value="achievements" className="flex items-center space-x-2">
             <Award className="h-4 w-4" />
-            <span className="hidden sm:inline">Badges</span>
+            <span className="hidden sm:inline">{t('gamification.achievements')}</span>
           </TabsTrigger>
         </TabsList>
 

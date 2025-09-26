@@ -1,0 +1,193 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "view": "View",
+    "close": "Close",
+    "next": "Next",
+    "previous": "Previous",
+    "continue": "Continue",
+    "complete": "Complete",
+    "start": "Start",
+    "stop": "Stop",
+    "pause": "Pause",
+    "resume": "Resume"
+  },
+  "navigation": {
+    "overview": "Overview",
+    "strategies": "Strategies",
+    "positions": "Positions",
+    "orders": "Orders",
+    "education": "Education",
+    "riskMonitor": "Risk Monitor",
+    "auditTrail": "Audit Trail",
+    "compliance": "Compliance",
+    "gamification": "Progress",
+    "performance": "Performance",
+    "latency": "Latency",
+    "alerts": "Alerts",
+    "settings": "Settings",
+    "help": "Help"
+  },
+  "trading": {
+    "portfolio": {
+      "value": "Portfolio Value",
+      "dailyPnl": "Daily P&L",
+      "totalPnl": "Total P&L",
+      "buyingPower": "Buying Power",
+      "marginUsed": "Margin Used",
+      "riskScore": "Risk Score"
+    },
+    "positions": {
+      "title": "Live Positions",
+      "noPositions": "No open positions",
+      "totalUnrealizedPnl": "Total Unrealized P&L",
+      "quantity": "Quantity",
+      "avgPrice": "Avg Price",
+      "currentPrice": "Current Price",
+      "marketValue": "Market Value"
+    },
+    "orders": {
+      "title": "Orders",
+      "buy": "BUY",
+      "sell": "SELL",
+      "pending": "Pending",
+      "filled": "Filled",
+      "cancelled": "Cancelled"
+    },
+    "strategies": {
+      "title": "Trading Strategies",
+      "active": "Active",
+      "paused": "Paused",
+      "stopped": "Stopped",
+      "ppoMomentum": "PPO Momentum",
+      "td3MeanReversion": "TD3 Mean Reversion",
+      "rviQSwing": "RVI-Q Swing"
+    }
+  },
+  "education": {
+    "title": "Education & Certification",
+    "subtitle": "Master advanced trading concepts through gamified learning. Earn XP points, unlock achievements, and gain certifications in non-custodial trading, zero-knowledge proofs, and reinforcement learning strategies.",
+    "modules": "Modules",
+    "interactive": "Interactive",
+    "concepts": "Concepts",
+    "progress": "Learning Progress",
+    "completion": "Overall Completion",
+    "certificates": "Certificates Earned",
+    "lessons": "Lessons Completed",
+    "xpPoints": "XP Points Earned",
+    "recommendedPath": "Recommended Learning Path",
+    "generateTrade": "Generate Educational Trade",
+    "learnFromTrade": "Learn from Trade",
+    "xpReward": "XP Reward",
+    "tradeExplanation": {
+      "title": "Trade Education",
+      "sections": {
+        "execution": "Trade Execution Summary",
+        "type": "Trade Type & Definition",
+        "logic": "Detailed Trade Logic",
+        "risk": "Risk Management",
+        "context": "Market Context & Timing",
+        "learning": "Key Learning Points"
+      },
+      "complete": "Learning Complete!",
+      "claimXp": "Claim XP"
+    },
+    "concepts": {
+      "var": "Value at Risk (VaR)",
+      "sharpeRatio": "Sharpe Ratio",
+      "stopLoss": "Stop Loss",
+      "momentum": "Momentum Trading",
+      "meanReversion": "Mean Reversion",
+      "zkProof": "Zero-Knowledge Proof"
+    },
+    "interactive": {
+      "dualProof": {
+        "title": "Dual-Proof Gate System",
+        "description": "Learn how mathematical proofs and regulatory compliance work together",
+        "xpReward": 35
+      },
+      "riskManagement": {
+        "title": "Risk Management Mastery",
+        "description": "Master VaR calculations, position sizing, and risk controls",
+        "xpReward": 30
+      },
+      "strategyBasics": {
+        "title": "Trading Strategy Fundamentals",
+        "description": "Understand momentum, mean reversion, and algorithmic strategies",
+        "xpReward": 25
+      },
+      "gamification": {
+        "title": "XP & Leveling System",
+        "description": "Learn how to earn XP, unlock badges, and level up",
+        "xpReward": 15
+      }
+    }
+  },
+  "gamification": {
+    "title": "Progress & Achievements",
+    "subtitle": "Level up your trading skills through gamified learning. Complete interactive quests, earn XP points, unlock exclusive badges, and climb the global leaderboards while mastering non-custodial RL trading.",
+    "level": "Level",
+    "xp": "XP",
+    "streak": "day streak",
+    "badges": "badges",
+    "quests": "Quests",
+    "leaderboard": "Leaderboard",
+    "achievements": "Badges",
+    "profile": "Profile",
+    "softCaps": "Soft Caps",
+    "recentXp": "Recent XP",
+    "activeQuests": "Active Quests",
+    "availableQuests": "Available Quests",
+    "browseQuests": "Browse Quests",
+    "sessionXp": "Session XP",
+    "earnedFrom": "Earned from educational content",
+    "yourProgress": "Your Progress",
+    "experiencePoints": "Experience Points",
+    "tradingStreak": "Trading Streak",
+    "achievementBadges": "Achievement Badges",
+    "learningQuests": "Learning Quests",
+    "intermediateTrader": "Intermediate Trader",
+    "readyForLevel": "Ready for Level",
+    "xpToNextLevel": "XP to next level"
+  },
+  "dualProof": {
+    "title": "Dual-Proof Gate System",
+    "zkProof": "Zero-Knowledge VaR Proof",
+    "acePolicy": "ACE Compliance Engine",
+    "auditTrail": "Blockchain Audit Trail",
+    "generate": "Generate Risk & Compliance Verification",
+    "generating": "Generating Mathematical Proofs...",
+    "verified": "Verified",
+    "approved": "Approved",
+    "anchored": "Anchored",
+    "pending": "Pending"
+  },
+  "risk": {
+    "title": "Risk Monitor",
+    "subtitle": "Real-time risk metrics and compliance monitoring",
+    "portfolioVar": "Portfolio VaR",
+    "positionConcentration": "Position Concentration",
+    "leverageRatio": "Leverage Ratio",
+    "drawdown": "Drawdown",
+    "normal": "Normal",
+    "warning": "Warning",
+    "critical": "Critical"
+  },
+  "onboarding": {
+    "welcome": "Welcome to ReFi.Trading",
+    "subtitle": "Non-custodial AI trading with dual-proof verification",
+    "chooseAccountType": "Choose Your Account Type",
+    "individual": "Individual Trader",
+    "dao": "DAO Treasury",
+    "institutional": "Institutional",
+    "getStarted": "Get Started",
+    "setupTime": "Setup time",
+    "features": "Features"
+  }
+}

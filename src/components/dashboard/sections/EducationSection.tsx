@@ -175,6 +175,7 @@ const mockUserProgress = {
 }
 
 export function EducationSection() {
+  const { t } = useTranslation()
   const [selectedModule, setSelectedModule] = useState<string | null>(null)
   const [showEducationOverlay, setShowEducationOverlay] = useState(false)
   const [educationType, setEducationType] = useState<'dual-proof' | 'risk-management' | 'strategy-basics' | 'gamification'>('dual-proof')
@@ -229,8 +230,8 @@ export function EducationSection() {
             </Button>
           </div>
           
-          <EducationModuleComponent
-            module={module}
+            <h2 className="text-2xl font-bold mb-2">{t('education.title')}</h2>
+            <p className="text-gray-600 dark:text-gray-400">{t('education.subtitle')}</p>
             userProgress={mockUserProgress[module.id]}
             onStartLesson={handleStartLesson}
             onStartQuiz={handleStartQuiz}
@@ -243,9 +244,9 @@ export function EducationSection() {
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-2xl font-bold mb-2">Education & Certification</h2>
+        <h2 className="text-2xl font-bold mb-2">{t('education.title')}</h2>
         <p className="text-gray-600 dark:text-gray-400">
-          Master advanced trading concepts through gamified learning. Earn XP points, unlock achievements, and gain certifications in non-custodial trading, zero-knowledge proofs, and reinforcement learning strategies.
+          {t('education.subtitle')}
         </p>
       </div>
 
@@ -254,13 +255,13 @@ export function EducationSection() {
         <CardHeader>
           <CardTitle className="flex items-center space-x-2">
             <TrendingUp className="h-5 w-5 text-blue-500" />
-            <span>Learning Progress</span>
+            <span>{t('education.progress')}</span>
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
           <div>
             <div className="flex justify-between text-sm mb-2">
-              <span>Overall Completion</span>
+              <span>{t('education.completion')}</span>
               <span>{completedModules} / {totalModules} modules</span>
             </div>
             <Progress value={overallProgress} className="h-3" />
@@ -269,19 +270,19 @@ export function EducationSection() {
           <div className="grid grid-cols-3 gap-4 text-center">
             <div>
               <div className="text-2xl font-bold text-blue-400">{completedModules}</div>
-              <div className="text-xs text-gray-500">Certificates Earned</div>
+              <div className="text-xs text-gray-500">{t('education.certificates')}</div>
             </div>
             <div>
               <div className="text-2xl font-bold text-green-400">
                 {Object.values(mockUserProgress).reduce((sum, p) => sum + p.lessonsCompleted, 0)}
               </div>
-              <div className="text-xs text-gray-500">Lessons Completed</div>
+              <div className="text-xs text-gray-500">{t('education.lessons')}</div>
             </div>
             <div>
               <div className="text-2xl font-bold text-purple-400">
                 {Object.values(mockUserProgress).reduce((sum, p) => sum + p.quizAttempts.length, 0)}
               </div>
-              <div className="text-xs text-gray-500">XP Points Earned</div>
+              <div className="text-xs text-gray-500">{t('education.xpPoints')}</div>
             </div>
           </div>
         </CardContent>

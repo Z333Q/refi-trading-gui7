@@ -1,0 +1,112 @@
+{
+  "common": {
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "success": "Succès",
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "view": "Voir",
+    "close": "Fermer",
+    "next": "Suivant",
+    "previous": "Précédent",
+    "continue": "Continuer",
+    "complete": "Terminer",
+    "start": "Commencer",
+    "stop": "Arrêter",
+    "pause": "Pause",
+    "resume": "Reprendre"
+  },
+  "navigation": {
+    "overview": "Aperçu",
+    "strategies": "Stratégies",
+    "positions": "Positions",
+    "orders": "Ordres",
+    "education": "Éducation",
+    "riskMonitor": "Moniteur de Risque",
+    "auditTrail": "Piste d'Audit",
+    "compliance": "Conformité",
+    "gamification": "Progrès",
+    "performance": "Performance",
+    "latency": "Latence",
+    "alerts": "Alertes",
+    "settings": "Paramètres",
+    "help": "Aide"
+  },
+  "trading": {
+    "portfolio": {
+      "value": "Valeur du Portefeuille",
+      "dailyPnl": "P&L Quotidien",
+      "totalPnl": "P&L Total",
+      "buyingPower": "Pouvoir d'Achat",
+      "marginUsed": "Marge Utilisée",
+      "riskScore": "Score de Risque"
+    },
+    "positions": {
+      "title": "Positions en Direct",
+      "noPositions": "Aucune position ouverte",
+      "totalUnrealizedPnl": "P&L Non Réalisé Total",
+      "quantity": "Quantité",
+      "avgPrice": "Prix Moyen",
+      "currentPrice": "Prix Actuel",
+      "marketValue": "Valeur Marchande"
+    },
+    "strategies": {
+      "title": "Stratégies de Trading",
+      "active": "Actif",
+      "paused": "En Pause",
+      "stopped": "Arrêté",
+      "ppoMomentum": "Momentum PPO",
+      "td3MeanReversion": "Retour à la Moyenne TD3",
+      "rviQSwing": "Swing RVI-Q"
+    }
+  },
+  "education": {
+    "title": "Éducation et Certification",
+    "subtitle": "Maîtrisez les concepts de trading avancés grâce à l'apprentissage gamifié",
+    "modules": "Modules",
+    "interactive": "Interactif",
+    "concepts": "Concepts",
+    "progress": "Progrès d'Apprentissage",
+    "completion": "Achèvement Global",
+    "certificates": "Certificats Obtenus",
+    "lessons": "Leçons Terminées",
+    "xpPoints": "Points XP Gagnés",
+    "recommendedPath": "Parcours d'Apprentissage Recommandé",
+    "generateTrade": "Générer un Trade Éducatif",
+    "learnFromTrade": "Apprendre du Trade",
+    "xpReward": "Récompense XP"
+  },
+  "gamification": {
+    "title": "Progrès et Réalisations",
+    "subtitle": "Améliorez vos compétences de trading grâce à l'apprentissage gamifié",
+    "level": "Niveau",
+    "xp": "XP",
+    "streak": "série de jours",
+    "badges": "badges",
+    "quests": "Quêtes",
+    "leaderboard": "Classement",
+    "achievements": "Badges",
+    "profile": "Profil",
+    "softCaps": "Limites Souples",
+    "recentXp": "XP Récent",
+    "activeQuests": "Quêtes Actives",
+    "availableQuests": "Quêtes Disponibles",
+    "browseQuests": "Parcourir les Quêtes",
+    "sessionXp": "XP de Session",
+    "earnedFrom": "Gagné du contenu éducatif"
+  },
+  "dualProof": {
+    "title": "Système de Porte à Double Preuve",
+    "zkProof": "Preuve VaR à Connaissance Zéro",
+    "acePolicy": "Moteur de Conformité ACE",
+    "auditTrail": "Piste d'Audit Blockchain",
+    "generate": "Générer la Vérification des Risques et de la Conformité",
+    "generating": "Génération des Preuves Mathématiques...",
+    "verified": "Vérifié",
+    "approved": "Approuvé",
+    "anchored": "Ancré",
+    "pending": "En Attente"
+  }
+}
