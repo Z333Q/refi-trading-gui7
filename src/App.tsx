@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
+import { ErrorBoundary } from './components/ui/ErrorBoundary'
 import { OnboardingWrapper } from './components/onboarding/OnboardingWrapper'
 import { Sidebar } from './components/dashboard/Sidebar'
 import { Header } from './components/dashboard/Header'
@@ -15,6 +17,7 @@ import { TooltipProvider } from './components/ui/tooltip'
 import { PersistentPopoutTab } from './components/ui/PersistentPopoutTab'
 
 function App() {
+  const { ready } = useTranslation()
   const [activeSection, setActiveSection] = useState('overview')
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [showOnboarding, setShowOnboarding] = useState(false)
@@ -57,20 +60,26 @@ function App() {
     }
   }
 
-  // Show loading state while initializing
-  if (!isInitialized) {
+  // Show loading state while initializing or translations loading
+  if (!isInitialized || !ready) {
     return (
       <div className="min-h-screen bg-gray-900 text-gray-50 flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-500 mx-auto mb-4"></div>
-          <p className="text-gray-400">Initializing ReFi.Trading...</p>
+          <p className="text-gray-400">
+            {!ready ? 'Loading translations...' : 'Initializing ReFi.Trading...'}
+          </p>
         </div>
       </div>
     )
   }
 
   if (showOnboarding) {
-    return <OnboardingWrapper onComplete={handleOnboardingComplete} />
+    return (
+      <ErrorBoundary>
+        <OnboardingWrapper onComplete={handleOnboardingComplete} />
+      </ErrorBoundary>
+    )
   }
 
   const renderSection = () => {
@@ -108,30 +117,34 @@ function App() {
   }
 
   return (
-    <TooltipProvider>
-      <div className="min-h-screen bg-gray-900 text-gray-50 overflow-hidden" data-theme="dark">
-        {/* Persistent Pop-out Tab - Only show on overview section */}
-        {activeSection === 'overview' && <PersistentPopoutTab />}
-        
-        <div className="flex h-screen">
-          <Sidebar 
-            activeSection={activeSection} 
-            onSectionChange={(section) => {
-              setActiveSection(section)
-              setSidebarOpen(false) // Close sidebar on mobile after selection
-            }}
-            isOpen={sidebarOpen}
-            onClose={() => setSidebarOpen(false)}
-          />
-          <div className="flex-1 flex flex-col overflow-hidden">
-            <Header onMenuClick={() => setSidebarOpen(true)} />
-            <main className="flex-1 overflow-y-auto p-4 sm:p-6">
-              {renderSection()}
-            </main>
+    <ErrorBoundary>
+      <TooltipProvider>
+        <div className="min-h-screen bg-gray-900 text-gray-50 overflow-hidden" data-theme="dark">
+          {/* Persistent Pop-out Tab - Only show on overview section */}
+          {activeSection === 'overview' && <PersistentPopoutTab />}
+          
+          <div className="flex h-screen">
+            <Sidebar 
+              activeSection={activeSection} 
+              onSectionChange={(section) => {
+                setActiveSection(section)
+                setSidebarOpen(false) // Close sidebar on mobile after selection
+              }}
+              isOpen={sidebarOpen}
+              onClose={() => setSidebarOpen(false)}
+            />
+            <div className="flex-1 flex flex-col overflow-hidden">
+              <Header onMenuClick={() => setSidebarOpen(true)} />
+              <main className="flex-1 overflow-y-auto p-4 sm:p-6">
+                <ErrorBoundary>
+                  {renderSection()}
+                </ErrorBoundary>
+              </main>
+            </div>
           </div>
         </div>
-      </div>
-    </TooltipProvider>
+      </TooltipProvider>
+    </ErrorBoundary>
   )
 }
 

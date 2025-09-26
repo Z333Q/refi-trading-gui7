@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { GamificationPanel } from '../../gamification/GamificationPanel'
 import { QuestTracker } from '../../gamification/QuestTracker'
 import { LeaderboardPanel } from '../../gamification/LeaderboardPanel'

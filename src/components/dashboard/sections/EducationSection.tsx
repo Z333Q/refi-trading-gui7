@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { EducationModuleComponent } from '../../education/EducationModule'
 import { EducationalTradeGenerator } from '../../education/EducationalTradeGenerator'
 import { InteractiveEducationOverlay } from '../../education/InteractiveEducationOverlay'
