@@ -1,0 +1,68 @@
+{
+  "common": {
+    "loading": "Na-ebu...",
+    "error": "Njehie",
+    "success": "Ihe ịga nke ọma",
+    "cancel": "Kagbuo",
+    "save": "Chekwaa",
+    "delete": "Hichapụ",
+    "edit": "Dezie",
+    "view": "Lee",
+    "close": "Mechie",
+    "next": "Ọzọ",
+    "previous": "Nke gara aga",
+    "continue": "Gaa n'ihu",
+    "complete": "Mechaa",
+    "start": "Malite",
+    "stop": "Kwụsị",
+    "pause": "Kwụsị nwa oge",
+    "resume": "Gaa n'ihu"
+  },
+  "navigation": {
+    "overview": "Nlele",
+    "strategies": "Atụmatụ",
+    "positions": "Ọnọdụ",
+    "orders": "Iwu",
+    "education": "Agụmakwụkwọ",
+    "riskMonitor": "Nlekọta Ihe ize ndụ",
+    "auditTrail": "Ụzọ Nyocha",
+    "compliance": "Nrube",
+    "gamification": "Ọganihu",
+    "performance": "Arụmọrụ",
+    "latency": "Igbu oge",
+    "alerts": "Ọkwa",
+    "settings": "Ntọala",
+    "help": "Enyemaka"
+  },
+  "trading": {
+    "portfolio": {
+      "value": "Uru Portfolio",
+      "dailyPnl": "Uru na Mfu Kwa Ụbọchị",
+      "totalPnl": "Mkpokọta Uru na Mfu",
+      "buyingPower": "Ike Ịzụrụ",
+      "marginUsed": "Margin Ejiri",
+      "riskScore": "Akara Ihe ize ndụ"
+    },
+    "strategies": {
+      "title": "Atụmatụ Azụmaahịa",
+      "active": "Na-arụ ọrụ",
+      "paused": "Kwụsịrị nwa oge",
+      "stopped": "Kwụsịrị"
+    }
+  },
+  "education": {
+    "title": "Agụmakwụkwọ na Asambodo",
+    "subtitle": "Mụta echiche azụmaahịa dị elu site na mmụta egwuregwu",
+    "modules": "Ngalaba",
+    "interactive": "Mmekọrịta",
+    "concepts": "Echiche"
+  },
+  "gamification": {
+    "title": "Ọganihu na Ihe Ịga Nke Ọma",
+    "subtitle": "Melite nkà azụmaahịa gị site na mmụta egwuregwu",
+    "level": "Ọkwa",
+    "xp": "Isi Ahụmịhe",
+    "streak": "ụbọchị na-eso eso",
+    "badges": "akara"
+  }
+}

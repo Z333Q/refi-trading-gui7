@@ -1,0 +1,68 @@
+{
+  "common": {
+    "loading": "Ana lodawa...",
+    "error": "Kuskure",
+    "success": "Nasara",
+    "cancel": "Soke",
+    "save": "Ajiye",
+    "delete": "Share",
+    "edit": "Gyara",
+    "view": "Duba",
+    "close": "Rufe",
+    "next": "Na gaba",
+    "previous": "Na baya",
+    "continue": "Ci gaba",
+    "complete": "Kammala",
+    "start": "Fara",
+    "stop": "Tsaya",
+    "pause": "Dakatar",
+    "resume": "Ci gaba"
+  },
+  "navigation": {
+    "overview": "Bayyani",
+    "strategies": "Dabaru",
+    "positions": "Matsayi",
+    "orders": "Umarni",
+    "education": "Ilimi",
+    "riskMonitor": "Lura Hadari",
+    "auditTrail": "Hanyar Bincike",
+    "compliance": "Bin biye",
+    "gamification": "Ci gaba",
+    "performance": "Aiki",
+    "latency": "Jinkiri",
+    "alerts": "Gargadi",
+    "settings": "Saiti",
+    "help": "Taimako"
+  },
+  "trading": {
+    "portfolio": {
+      "value": "Darajar Portfolio",
+      "dailyPnl": "Riba da Asara na Rana",
+      "totalPnl": "Jimlar Riba da Asara",
+      "buyingPower": "Karfin Saye",
+      "marginUsed": "Margin da aka Yi amfani",
+      "riskScore": "Maki Hadari"
+    },
+    "strategies": {
+      "title": "Dabarun Kasuwanci",
+      "active": "Mai aiki",
+      "paused": "An dakatar",
+      "stopped": "An tsaya"
+    }
+  },
+  "education": {
+    "title": "Ilimi da Takaddama",
+    "subtitle": "Koyi manyan tunanin kasuwanci ta hanyar koyon wasa",
+    "modules": "Sassan",
+    "interactive": "Hulɗa",
+    "concepts": "Tunani"
+  },
+  "gamification": {
+    "title": "Ci gaba da Nasarori",
+    "subtitle": "Inganta ƙwarewar kasuwanci ta hanyar koyon wasa",
+    "level": "Matakin",
+    "xp": "Maki Gogewa",
+    "streak": "kwanaki a jere",
+    "badges": "alamomi"
+  }
+}

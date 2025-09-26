@@ -1,0 +1,68 @@
+{
+  "common": {
+    "loading": "Načítání...",
+    "error": "Chyba",
+    "success": "Úspěch",
+    "cancel": "Zrušit",
+    "save": "Uložit",
+    "delete": "Smazat",
+    "edit": "Upravit",
+    "view": "Zobrazit",
+    "close": "Zavřít",
+    "next": "Další",
+    "previous": "Předchozí",
+    "continue": "Pokračovat",
+    "complete": "Dokončit",
+    "start": "Začít",
+    "stop": "Zastavit",
+    "pause": "Pozastavit",
+    "resume": "Obnovit"
+  },
+  "navigation": {
+    "overview": "Přehled",
+    "strategies": "Strategie",
+    "positions": "Pozice",
+    "orders": "Objednávky",
+    "education": "Vzdělání",
+    "riskMonitor": "Monitor Rizik",
+    "auditTrail": "Auditní Stopa",
+    "compliance": "Soulad",
+    "gamification": "Pokrok",
+    "performance": "Výkon",
+    "latency": "Latence",
+    "alerts": "Upozornění",
+    "settings": "Nastavení",
+    "help": "Nápověda"
+  },
+  "trading": {
+    "portfolio": {
+      "value": "Hodnota Portfolia",
+      "dailyPnl": "Denní Z&Z",
+      "totalPnl": "Celkový Z&Z",
+      "buyingPower": "Kupní Síla",
+      "marginUsed": "Použitá Marže",
+      "riskScore": "Skóre Rizika"
+    },
+    "strategies": {
+      "title": "Obchodní Strategie",
+      "active": "Aktivní",
+      "paused": "Pozastaveno",
+      "stopped": "Zastaveno"
+    }
+  },
+  "education": {
+    "title": "Vzdělání a Certifikace",
+    "subtitle": "Ovládněte pokročilé obchodní koncepty prostřednictvím gamifikovaného učení",
+    "modules": "Moduly",
+    "interactive": "Interaktivní",
+    "concepts": "Koncepty"
+  },
+  "gamification": {
+    "title": "Pokrok a Úspěchy",
+    "subtitle": "Zlepšete své obchodní dovednosti prostřednictvím gamifikovaného učení",
+    "level": "Úroveň",
+    "xp": "XP",
+    "streak": "dní v řadě",
+    "badges": "odznaky"
+  }
+}

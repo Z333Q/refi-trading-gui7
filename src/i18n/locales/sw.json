@@ -1,0 +1,68 @@
+{
+  "common": {
+    "loading": "Inapakia...",
+    "error": "Hitilafu",
+    "success": "Mafanikio",
+    "cancel": "Ghairi",
+    "save": "Hifadhi",
+    "delete": "Futa",
+    "edit": "Hariri",
+    "view": "Ona",
+    "close": "Funga",
+    "next": "Ifuatayo",
+    "previous": "Iliyotangulia",
+    "continue": "Endelea",
+    "complete": "Maliza",
+    "start": "Anza",
+    "stop": "Simama",
+    "pause": "Sitisha",
+    "resume": "Endelea"
+  },
+  "navigation": {
+    "overview": "Muhtasari",
+    "strategies": "Mikakati",
+    "positions": "Nafasi",
+    "orders": "Maagizo",
+    "education": "Elimu",
+    "riskMonitor": "Kufuatilia Hatari",
+    "auditTrail": "Njia ya Ukaguzi",
+    "compliance": "Utii",
+    "gamification": "Maendeleo",
+    "performance": "Utendaji",
+    "latency": "Ucheleweshaji",
+    "alerts": "Tahadhari",
+    "settings": "Mipangilio",
+    "help": "Msaada"
+  },
+  "trading": {
+    "portfolio": {
+      "value": "Thamani ya Portfolio",
+      "dailyPnl": "Faida na Hasara ya Kila Siku",
+      "totalPnl": "Jumla ya Faida na Hasara",
+      "buyingPower": "Nguvu ya Ununuzi",
+      "marginUsed": "Margin Iliyotumika",
+      "riskScore": "Alama ya Hatari"
+    },
+    "strategies": {
+      "title": "Mikakati ya Biashara",
+      "active": "Hai",
+      "paused": "Imesitishwa",
+      "stopped": "Imesimamishwa"
+    }
+  },
+  "education": {
+    "title": "Elimu na Uthibitisho",
+    "subtitle": "Jifunze dhana za hali ya juu za biashara kupitia mafunzo ya mchezo",
+    "modules": "Moduli",
+    "interactive": "Shirikishi",
+    "concepts": "Dhana"
+  },
+  "gamification": {
+    "title": "Maendeleo na Mafanikio",
+    "subtitle": "Boresha ujuzi wako wa biashara kupitia mafunzo ya mchezo",
+    "level": "Kiwango",
+    "xp": "Pointi za Uzoefu",
+    "streak": "siku mfululizo",
+    "badges": "vibeti"
+  }
+}

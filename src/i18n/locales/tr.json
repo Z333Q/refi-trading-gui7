@@ -1,0 +1,68 @@
+{
+  "common": {
+    "loading": "Yükleniyor...",
+    "error": "Hata",
+    "success": "Başarılı",
+    "cancel": "İptal",
+    "save": "Kaydet",
+    "delete": "Sil",
+    "edit": "Düzenle",
+    "view": "Görüntüle",
+    "close": "Kapat",
+    "next": "İleri",
+    "previous": "Geri",
+    "continue": "Devam Et",
+    "complete": "Tamamla",
+    "start": "Başla",
+    "stop": "Durdur",
+    "pause": "Duraklat",
+    "resume": "Devam Et"
+  },
+  "navigation": {
+    "overview": "Genel Bakış",
+    "strategies": "Stratejiler",
+    "positions": "Pozisyonlar",
+    "orders": "Emirler",
+    "education": "Eğitim",
+    "riskMonitor": "Risk Monitörü",
+    "auditTrail": "Denetim İzi",
+    "compliance": "Uyumluluk",
+    "gamification": "İlerleme",
+    "performance": "Performans",
+    "latency": "Gecikme",
+    "alerts": "Uyarılar",
+    "settings": "Ayarlar",
+    "help": "Yardım"
+  },
+  "trading": {
+    "portfolio": {
+      "value": "Portföy Değeri",
+      "dailyPnl": "Günlük K&Z",
+      "totalPnl": "Toplam K&Z",
+      "buyingPower": "Satın Alma Gücü",
+      "marginUsed": "Kullanılan Marj",
+      "riskScore": "Risk Skoru"
+    },
+    "strategies": {
+      "title": "Trading Stratejileri",
+      "active": "Aktif",
+      "paused": "Duraklatıldı",
+      "stopped": "Durduruldu"
+    }
+  },
+  "education": {
+    "title": "Eğitim ve Sertifikasyon",
+    "subtitle": "Oyunlaştırılmış öğrenme ile gelişmiş trading kavramlarında ustalaşın",
+    "modules": "Modüller",
+    "interactive": "Etkileşimli",
+    "concepts": "Kavramlar"
+  },
+  "gamification": {
+    "title": "İlerleme ve Başarılar",
+    "subtitle": "Oyunlaştırılmış öğrenme ile trading becerilerinizi geliştirin",
+    "level": "Seviye",
+    "xp": "Deneyim Puanı",
+    "streak": "gün serisi",
+    "badges": "rozetler"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "common": {
+    "loading": "로딩 중...",
+    "error": "오류",
+    "success": "성공",
+    "cancel": "취소",
+    "save": "저장",
+    "delete": "삭제",
+    "edit": "편집",
+    "view": "보기",
+    "close": "닫기",
+    "next": "다음",
+    "previous": "이전",
+    "continue": "계속",
+    "complete": "완료",
+    "start": "시작",
+    "stop": "중지",
+    "pause": "일시정지",
+    "resume": "재개"
+  },
+  "navigation": {
+    "overview": "개요",
+    "strategies": "전략",
+    "positions": "포지션",
+    "orders": "주문",
+    "education": "교육",
+    "riskMonitor": "리스크 모니터",
+    "auditTrail": "감사 추적",
+    "compliance": "컴플라이언스",
+    "gamification": "진행상황",
+    "performance": "성과",
+    "latency": "지연시간",
+    "alerts": "알림",
+    "settings": "설정",
+    "help": "도움말"
+  },
+  "trading": {
+    "portfolio": {
+      "value": "포트폴리오 가치",
+      "dailyPnl": "일일 손익",
+      "totalPnl": "총 손익",
+      "buyingPower": "구매력",
+      "marginUsed": "사용된 마진",
+      "riskScore": "리스크 점수"
+    },
+    "strategies": {
+      "title": "트레이딩 전략",
+      "active": "활성",
+      "paused": "일시정지",
+      "stopped": "중지됨"
+    }
+  },
+  "education": {
+    "title": "교육 및 인증",
+    "subtitle": "게임화된 학습을 통해 고급 트레이딩 개념을 마스터하세요",
+    "modules": "모듈",
+    "interactive": "인터랙티브",
+    "concepts": "개념"
+  },
+  "gamification": {
+    "title": "진행상황 및 성취",
+    "subtitle": "게임화된 학습을 통해 트레이딩 스킬을 향상시키세요",
+    "level": "레벨",
+    "xp": "경험치",
+    "streak": "연속 일수",
+    "badges": "배지"
+  }
+}

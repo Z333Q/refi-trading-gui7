@@ -1,0 +1,68 @@
+{
+  "common": {
+    "loading": "در حال بارگذاری...",
+    "error": "خطا",
+    "success": "موفقیت",
+    "cancel": "لغو",
+    "save": "ذخیره",
+    "delete": "حذف",
+    "edit": "ویرایش",
+    "view": "مشاهده",
+    "close": "بستن",
+    "next": "بعدی",
+    "previous": "قبلی",
+    "continue": "ادامه",
+    "complete": "تکمیل",
+    "start": "شروع",
+    "stop": "توقف",
+    "pause": "مکث",
+    "resume": "ادامه"
+  },
+  "navigation": {
+    "overview": "نمای کلی",
+    "strategies": "استراتژی‌ها",
+    "positions": "موقعیت‌ها",
+    "orders": "سفارشات",
+    "education": "آموزش",
+    "riskMonitor": "نظارت بر ریسک",
+    "auditTrail": "مسیر حسابرسی",
+    "compliance": "انطباق",
+    "gamification": "پیشرفت",
+    "performance": "عملکرد",
+    "latency": "تأخیر",
+    "alerts": "هشدارها",
+    "settings": "تنظیمات",
+    "help": "راهنما"
+  },
+  "trading": {
+    "portfolio": {
+      "value": "ارزش پرتفوی",
+      "dailyPnl": "سود و زیان روزانه",
+      "totalPnl": "کل سود و زیان",
+      "buyingPower": "قدرت خرید",
+      "marginUsed": "حاشیه استفاده شده",
+      "riskScore": "امتیاز ریسک"
+    },
+    "strategies": {
+      "title": "استراتژی‌های معاملاتی",
+      "active": "فعال",
+      "paused": "متوقف شده",
+      "stopped": "خاموش"
+    }
+  },
+  "education": {
+    "title": "آموزش و گواهی‌نامه",
+    "subtitle": "مفاهیم پیشرفته معاملات را از طریق یادگیری بازی‌وار فرا بگیرید",
+    "modules": "ماژول‌ها",
+    "interactive": "تعاملی",
+    "concepts": "مفاهیم"
+  },
+  "gamification": {
+    "title": "پیشرفت و دستاوردها",
+    "subtitle": "مهارت‌های معاملاتی خود را از طریق یادگیری بازی‌وار بهبود دهید",
+    "level": "سطح",
+    "xp": "امتیاز تجربه",
+    "streak": "روزهای متوالی",
+    "badges": "نشان‌ها"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "common": {
+    "loading": "Đang tải...",
+    "error": "Lỗi",
+    "success": "Thành công",
+    "cancel": "Hủy",
+    "save": "Lưu",
+    "delete": "Xóa",
+    "edit": "Chỉnh sửa",
+    "view": "Xem",
+    "close": "Đóng",
+    "next": "Tiếp theo",
+    "previous": "Trước",
+    "continue": "Tiếp tục",
+    "complete": "Hoàn thành",
+    "start": "Bắt đầu",
+    "stop": "Dừng",
+    "pause": "Tạm dừng",
+    "resume": "Tiếp tục"
+  },
+  "navigation": {
+    "overview": "Tổng quan",
+    "strategies": "Chiến lược",
+    "positions": "Vị thế",
+    "orders": "Lệnh",
+    "education": "Giáo dục",
+    "riskMonitor": "Giám sát Rủi ro",
+    "auditTrail": "Dấu vết Kiểm toán",
+    "compliance": "Tuân thủ",
+    "gamification": "Tiến độ",
+    "performance": "Hiệu suất",
+    "latency": "Độ trễ",
+    "alerts": "Cảnh báo",
+    "settings": "Cài đặt",
+    "help": "Trợ giúp"
+  },
+  "trading": {
+    "portfolio": {
+      "value": "Giá trị Danh mục",
+      "dailyPnl": "L&L Hàng ngày",
+      "totalPnl": "Tổng L&L",
+      "buyingPower": "Sức mua",
+      "marginUsed": "Ký quỹ Đã sử dụng",
+      "riskScore": "Điểm Rủi ro"
+    },
+    "strategies": {
+      "title": "Chiến lược Giao dịch",
+      "active": "Hoạt động",
+      "paused": "Tạm dừng",
+      "stopped": "Dừng"
+    }
+  },
+  "education": {
+    "title": "Giáo dục và Chứng chỉ",
+    "subtitle": "Thành thạo các khái niệm giao dịch nâng cao thông qua học tập có tính chất trò chơi",
+    "modules": "Mô-đun",
+    "interactive": "Tương tác",
+    "concepts": "Khái niệm"
+  },
+  "gamification": {
+    "title": "Tiến độ và Thành tích",
+    "subtitle": "Cải thiện kỹ năng giao dịch của bạn thông qua học tập có tính chất trò chơi",
+    "level": "Cấp độ",
+    "xp": "Điểm kinh nghiệm",
+    "streak": "ngày liên tiếp",
+    "badges": "huy hiệu"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "common": {
+    "loading": "Memuatkan...",
+    "error": "Ralat",
+    "success": "Berjaya",
+    "cancel": "Batal",
+    "save": "Simpan",
+    "delete": "Padam",
+    "edit": "Edit",
+    "view": "Lihat",
+    "close": "Tutup",
+    "next": "Seterusnya",
+    "previous": "Sebelumnya",
+    "continue": "Teruskan",
+    "complete": "Selesai",
+    "start": "Mula",
+    "stop": "Berhenti",
+    "pause": "Jeda",
+    "resume": "Sambung"
+  },
+  "navigation": {
+    "overview": "Gambaran Keseluruhan",
+    "strategies": "Strategi",
+    "positions": "Kedudukan",
+    "orders": "Pesanan",
+    "education": "Pendidikan",
+    "riskMonitor": "Monitor Risiko",
+    "auditTrail": "Jejak Audit",
+    "compliance": "Pematuhan",
+    "gamification": "Kemajuan",
+    "performance": "Prestasi",
+    "latency": "Kelewatan",
+    "alerts": "Amaran",
+    "settings": "Tetapan",
+    "help": "Bantuan"
+  },
+  "trading": {
+    "portfolio": {
+      "value": "Nilai Portfolio",
+      "dailyPnl": "U&R Harian",
+      "totalPnl": "Jumlah U&R",
+      "buyingPower": "Kuasa Beli",
+      "marginUsed": "Margin Digunakan",
+      "riskScore": "Skor Risiko"
+    },
+    "strategies": {
+      "title": "Strategi Dagangan",
+      "active": "Aktif",
+      "paused": "Dijeda",
+      "stopped": "Dihentikan"
+    }
+  },
+  "education": {
+    "title": "Pendidikan dan Pensijilan",
+    "subtitle": "Kuasai konsep dagangan lanjutan melalui pembelajaran bergamifikasi",
+    "modules": "Modul",
+    "interactive": "Interaktif",
+    "concepts": "Konsep"
+  },
+  "gamification": {
+    "title": "Kemajuan dan Pencapaian",
+    "subtitle": "Tingkatkan kemahiran dagangan anda melalui pembelajaran bergamifikasi",
+    "level": "Tahap",
+    "xp": "Mata Pengalaman",
+    "streak": "hari berturut-turut",
+    "badges": "lencana"
+  }
+}

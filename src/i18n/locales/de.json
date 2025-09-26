@@ -1,0 +1,68 @@
+{
+  "common": {
+    "loading": "Laden...",
+    "error": "Fehler",
+    "success": "Erfolg",
+    "cancel": "Abbrechen",
+    "save": "Speichern",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "view": "Anzeigen",
+    "close": "Schließen",
+    "next": "Weiter",
+    "previous": "Zurück",
+    "continue": "Fortfahren",
+    "complete": "Abschließen",
+    "start": "Starten",
+    "stop": "Stoppen",
+    "pause": "Pausieren",
+    "resume": "Fortsetzen"
+  },
+  "navigation": {
+    "overview": "Übersicht",
+    "strategies": "Strategien",
+    "positions": "Positionen",
+    "orders": "Aufträge",
+    "education": "Bildung",
+    "riskMonitor": "Risiko-Monitor",
+    "auditTrail": "Audit-Spur",
+    "compliance": "Compliance",
+    "gamification": "Fortschritt",
+    "performance": "Leistung",
+    "latency": "Latenz",
+    "alerts": "Warnungen",
+    "settings": "Einstellungen",
+    "help": "Hilfe"
+  },
+  "trading": {
+    "portfolio": {
+      "value": "Portfolio-Wert",
+      "dailyPnl": "Täglicher P&L",
+      "totalPnl": "Gesamt P&L",
+      "buyingPower": "Kaufkraft",
+      "marginUsed": "Verwendete Marge",
+      "riskScore": "Risiko-Score"
+    },
+    "strategies": {
+      "title": "Trading-Strategien",
+      "active": "Aktiv",
+      "paused": "Pausiert",
+      "stopped": "Gestoppt"
+    }
+  },
+  "education": {
+    "title": "Bildung & Zertifizierung",
+    "subtitle": "Meistern Sie fortgeschrittene Trading-Konzepte durch gamifiziertes Lernen",
+    "modules": "Module",
+    "interactive": "Interaktiv",
+    "concepts": "Konzepte"
+  },
+  "gamification": {
+    "title": "Fortschritt & Erfolge",
+    "subtitle": "Verbessern Sie Ihre Trading-Fähigkeiten durch gamifiziertes Lernen",
+    "level": "Level",
+    "xp": "XP",
+    "streak": "Tage-Serie",
+    "badges": "Abzeichen"
+  }
+}

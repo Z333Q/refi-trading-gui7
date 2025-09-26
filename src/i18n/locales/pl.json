@@ -1,0 +1,68 @@
+{
+  "common": {
+    "loading": "Ładowanie...",
+    "error": "Błąd",
+    "success": "Sukces",
+    "cancel": "Anuluj",
+    "save": "Zapisz",
+    "delete": "Usuń",
+    "edit": "Edytuj",
+    "view": "Zobacz",
+    "close": "Zamknij",
+    "next": "Dalej",
+    "previous": "Wstecz",
+    "continue": "Kontynuuj",
+    "complete": "Ukończ",
+    "start": "Rozpocznij",
+    "stop": "Zatrzymaj",
+    "pause": "Wstrzymaj",
+    "resume": "Wznów"
+  },
+  "navigation": {
+    "overview": "Przegląd",
+    "strategies": "Strategie",
+    "positions": "Pozycje",
+    "orders": "Zlecenia",
+    "education": "Edukacja",
+    "riskMonitor": "Monitor Ryzyka",
+    "auditTrail": "Ścieżka Audytu",
+    "compliance": "Zgodność",
+    "gamification": "Postęp",
+    "performance": "Wydajność",
+    "latency": "Opóźnienie",
+    "alerts": "Alerty",
+    "settings": "Ustawienia",
+    "help": "Pomoc"
+  },
+  "trading": {
+    "portfolio": {
+      "value": "Wartość Portfela",
+      "dailyPnl": "Dzienny Z&S",
+      "totalPnl": "Całkowity Z&S",
+      "buyingPower": "Siła Nabywcza",
+      "marginUsed": "Wykorzystana Marża",
+      "riskScore": "Wynik Ryzyka"
+    },
+    "strategies": {
+      "title": "Strategie Tradingowe",
+      "active": "Aktywny",
+      "paused": "Wstrzymany",
+      "stopped": "Zatrzymany"
+    }
+  },
+  "education": {
+    "title": "Edukacja i Certyfikacja",
+    "subtitle": "Opanuj zaawansowane koncepcje tradingu poprzez grywalizowane uczenie się",
+    "modules": "Moduły",
+    "interactive": "Interaktywny",
+    "concepts": "Koncepcje"
+  },
+  "gamification": {
+    "title": "Postęp i Osiągnięcia",
+    "subtitle": "Popraw swoje umiejętności tradingowe poprzez grywalizowane uczenie się",
+    "level": "Poziom",
+    "xp": "XP",
+    "streak": "dni z rzędu",
+    "badges": "odznaki"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "common": {
+    "loading": "Зареждане...",
+    "error": "Грешка",
+    "success": "Успех",
+    "cancel": "Отказ",
+    "save": "Запази",
+    "delete": "Изтрий",
+    "edit": "Редактирай",
+    "view": "Виж",
+    "close": "Затвори",
+    "next": "Напред",
+    "previous": "Назад",
+    "continue": "Продължи",
+    "complete": "Завърши",
+    "start": "Започни",
+    "stop": "Спри",
+    "pause": "Пауза",
+    "resume": "Възобнови"
+  },
+  "navigation": {
+    "overview": "Преглед",
+    "strategies": "Стратегии",
+    "positions": "Позиции",
+    "orders": "Поръчки",
+    "education": "Образование",
+    "riskMonitor": "Монитор за Риск",
+    "auditTrail": "Одитна Следа",
+    "compliance": "Съответствие",
+    "gamification": "Прогрес",
+    "performance": "Производителност",
+    "latency": "Латентност",
+    "alerts": "Предупреждения",
+    "settings": "Настройки",
+    "help": "Помощ"
+  },
+  "trading": {
+    "portfolio": {
+      "value": "Стойност на Портфейла",
+      "dailyPnl": "Дневна П&З",
+      "totalPnl": "Обща П&З",
+      "buyingPower": "Покупателна Способност",
+      "marginUsed": "Използвана Марджа",
+      "riskScore": "Рискова Оценка"
+    },
+    "strategies": {
+      "title": "Търговски Стратегии",
+      "active": "Активен",
+      "paused": "На Пауза",
+      "stopped": "Спрян"
+    }
+  },
+  "education": {
+    "title": "Образование и Сертифициране",
+    "subtitle": "Овладейте напреднали търговски концепции чрез геймифицирано учене",
+    "modules": "Модули",
+    "interactive": "Интерактивен",
+    "concepts": "Концепции"
+  },
+  "gamification": {
+    "title": "Прогрес и Постижения",
+    "subtitle": "Подобрете търговските си умения чрез геймифицирано учене",
+    "level": "Ниво",
+    "xp": "XP",
+    "streak": "дни поред",
+    "badges": "значки"
+  }
+}

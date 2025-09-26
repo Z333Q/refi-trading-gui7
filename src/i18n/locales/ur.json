@@ -1,0 +1,68 @@
+{
+  "common": {
+    "loading": "لوڈ ہو رہا ہے...",
+    "error": "خرابی",
+    "success": "کامیابی",
+    "cancel": "منسوخ",
+    "save": "محفوظ کریں",
+    "delete": "حذف کریں",
+    "edit": "ترمیم",
+    "view": "دیکھیں",
+    "close": "بند کریں",
+    "next": "اگلا",
+    "previous": "پچھلا",
+    "continue": "جاری رکھیں",
+    "complete": "مکمل کریں",
+    "start": "شروع کریں",
+    "stop": "رک جائیں",
+    "pause": "رک جائیں",
+    "resume": "دوبارہ شروع کریں"
+  },
+  "navigation": {
+    "overview": "جائزہ",
+    "strategies": "حکمت عملیاں",
+    "positions": "پوزیشنز",
+    "orders": "آرڈرز",
+    "education": "تعلیم",
+    "riskMonitor": "رسک مانیٹر",
+    "auditTrail": "آڈٹ ٹریل",
+    "compliance": "تعمیل",
+    "gamification": "پیش قدمی",
+    "performance": "کارکردگی",
+    "latency": "تاخیر",
+    "alerts": "الرٹس",
+    "settings": "سیٹنگز",
+    "help": "مدد"
+  },
+  "trading": {
+    "portfolio": {
+      "value": "پورٹ فولیو کی قیمت",
+      "dailyPnl": "روزانہ منافع و نقصان",
+      "totalPnl": "کل منافع و نقصان",
+      "buyingPower": "خریداری کی طاقت",
+      "marginUsed": "استعمال شدہ مارجن",
+      "riskScore": "رسک اسکور"
+    },
+    "strategies": {
+      "title": "ٹریڈنگ کی حکمت عملیاں",
+      "active": "فعال",
+      "paused": "رک گئی",
+      "stopped": "بند"
+    }
+  },
+  "education": {
+    "title": "تعلیم اور سرٹیفیکیشن",
+    "subtitle": "گیمیفائیڈ لرننگ کے ذریعے ایڈوانس ٹریڈنگ کے تصورات میں مہارت حاصل کریں",
+    "modules": "ماڈیولز",
+    "interactive": "انٹرایکٹو",
+    "concepts": "تصورات"
+  },
+  "gamification": {
+    "title": "پیش قدمی اور کامیابیاں",
+    "subtitle": "گیمیفائیڈ لرننگ کے ذریعے اپنی ٹریڈنگ کی مہارت بہتر بنائیں",
+    "level": "لیول",
+    "xp": "تجربہ پوائنٹس",
+    "streak": "دنوں کا سلسلہ",
+    "badges": "بیجز"
+  }
+}

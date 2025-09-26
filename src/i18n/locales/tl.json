@@ -1,0 +1,68 @@
+{
+  "common": {
+    "loading": "Naglo-load...",
+    "error": "Error",
+    "success": "Tagumpay",
+    "cancel": "Kanselahin",
+    "save": "I-save",
+    "delete": "Tanggalin",
+    "edit": "I-edit",
+    "view": "Tingnan",
+    "close": "Isara",
+    "next": "Susunod",
+    "previous": "Nakaraan",
+    "continue": "Magpatuloy",
+    "complete": "Kumpletuhin",
+    "start": "Simulan",
+    "stop": "Ihinto",
+    "pause": "I-pause",
+    "resume": "Ipagpatuloy"
+  },
+  "navigation": {
+    "overview": "Pangkalahatang-tanaw",
+    "strategies": "Mga Estratehiya",
+    "positions": "Mga Posisyon",
+    "orders": "Mga Order",
+    "education": "Edukasyon",
+    "riskMonitor": "Risk Monitor",
+    "auditTrail": "Audit Trail",
+    "compliance": "Compliance",
+    "gamification": "Pag-unlad",
+    "performance": "Pagganap",
+    "latency": "Latency",
+    "alerts": "Mga Alerto",
+    "settings": "Mga Setting",
+    "help": "Tulong"
+  },
+  "trading": {
+    "portfolio": {
+      "value": "Halaga ng Portfolio",
+      "dailyPnl": "Araw-araw na P&L",
+      "totalPnl": "Kabuuang P&L",
+      "buyingPower": "Kapangyarihang Bumili",
+      "marginUsed": "Ginamit na Margin",
+      "riskScore": "Risk Score"
+    },
+    "strategies": {
+      "title": "Mga Estratehiya sa Trading",
+      "active": "Aktibo",
+      "paused": "Naka-pause",
+      "stopped": "Natigil"
+    }
+  },
+  "education": {
+    "title": "Edukasyon at Sertipikasyon",
+    "subtitle": "Matugunan ang mga advanced na konsepto sa trading sa pamamagitan ng gamified learning",
+    "modules": "Mga Module",
+    "interactive": "Interactive",
+    "concepts": "Mga Konsepto"
+  },
+  "gamification": {
+    "title": "Pag-unlad at Mga Tagumpay",
+    "subtitle": "Pahusayin ang inyong mga kasanayan sa trading sa pamamagitan ng gamified learning",
+    "level": "Level",
+    "xp": "Experience Points",
+    "streak": "araw na tuloy-tuloy",
+    "badges": "mga badge"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "common": {
+    "loading": "Kraunama...",
+    "error": "Klaida",
+    "success": "Sėkmė",
+    "cancel": "Atšaukti",
+    "save": "Išsaugoti",
+    "delete": "Ištrinti",
+    "edit": "Redaguoti",
+    "view": "Peržiūrėti",
+    "close": "Uždaryti",
+    "next": "Kitas",
+    "previous": "Ankstesnis",
+    "continue": "Tęsti",
+    "complete": "Užbaigti",
+    "start": "Pradėti",
+    "stop": "Sustabdyti",
+    "pause": "Pristabdyti",
+    "resume": "Tęsti"
+  },
+  "navigation": {
+    "overview": "Apžvalga",
+    "strategies": "Strategijos",
+    "positions": "Pozicijos",
+    "orders": "Užsakymai",
+    "education": "Švietimas",
+    "riskMonitor": "Rizikos Monitorius",
+    "auditTrail": "Audito Pėdsakas",
+    "compliance": "Atitiktis",
+    "gamification": "Pažanga",
+    "performance": "Našumas",
+    "latency": "Vėlavimas",
+    "alerts": "Įspėjimai",
+    "settings": "Nustatymai",
+    "help": "Pagalba"
+  },
+  "trading": {
+    "portfolio": {
+      "value": "Portfelio Vertė",
+      "dailyPnl": "Dienos P&N",
+      "totalPnl": "Bendras P&N",
+      "buyingPower": "Pirkimo Galia",
+      "marginUsed": "Naudojama Marža",
+      "riskScore": "Rizikos Balas"
+    },
+    "strategies": {
+      "title": "Prekybos Strategijos",
+      "active": "Aktyvus",
+      "paused": "Pristabdytas",
+      "stopped": "Sustabdytas"
+    }
+  },
+  "education": {
+    "title": "Švietimas ir Sertifikavimas",
+    "subtitle": "Išmokite pažangius prekybos konceptus per žaidybinį mokymąsi",
+    "modules": "Moduliai",
+    "interactive": "Interaktyvus",
+    "concepts": "Konceptai"
+  },
+  "gamification": {
+    "title": "Pažanga ir Pasiekimai",
+    "subtitle": "Tobulinkite savo prekybos įgūdžius per žaidybinį mokymąsi",
+    "level": "Lygis",
+    "xp": "XP",
+    "streak": "dienų iš eilės",
+    "badges": "ženkleliai"
+  }
+}

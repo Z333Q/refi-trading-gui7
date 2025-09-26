@@ -1,0 +1,68 @@
+{
+  "common": {
+    "loading": "טוען...",
+    "error": "שגיאה",
+    "success": "הצלחה",
+    "cancel": "ביטול",
+    "save": "שמירה",
+    "delete": "מחיקה",
+    "edit": "עריכה",
+    "view": "צפייה",
+    "close": "סגירה",
+    "next": "הבא",
+    "previous": "הקודם",
+    "continue": "המשך",
+    "complete": "השלמה",
+    "start": "התחלה",
+    "stop": "עצירה",
+    "pause": "השהיה",
+    "resume": "חידוש"
+  },
+  "navigation": {
+    "overview": "סקירה כללית",
+    "strategies": "אסטרטגיות",
+    "positions": "פוזיציות",
+    "orders": "הזמנות",
+    "education": "חינוך",
+    "riskMonitor": "מוניטור סיכונים",
+    "auditTrail": "מסלול ביקורת",
+    "compliance": "ציות",
+    "gamification": "התקדמות",
+    "performance": "ביצועים",
+    "latency": "השהיה",
+    "alerts": "התראות",
+    "settings": "הגדרות",
+    "help": "עזרה"
+  },
+  "trading": {
+    "portfolio": {
+      "value": "ערך התיק",
+      "dailyPnl": "רווח והפסד יומי",
+      "totalPnl": "רווח והפסד כולל",
+      "buyingPower": "כוח קנייה",
+      "marginUsed": "מרווח בשימוש",
+      "riskScore": "ציון סיכון"
+    },
+    "strategies": {
+      "title": "אסטרטגיות מסחר",
+      "active": "פעיל",
+      "paused": "מושהה",
+      "stopped": "עצור"
+    }
+  },
+  "education": {
+    "title": "חינוך ואישורים",
+    "subtitle": "שלוט במושגי מסחר מתקדמים דרך למידה משחקית",
+    "modules": "מודולים",
+    "interactive": "אינטראקטיבי",
+    "concepts": "מושגים"
+  },
+  "gamification": {
+    "title": "התקדמות והישגים",
+    "subtitle": "שפר את כישורי המסחר שלך דרך למידה משחקית",
+    "level": "רמה",
+    "xp": "נקודות ניסיון",
+    "streak": "רצף ימים",
+    "badges": "תגים"
+  }
+}

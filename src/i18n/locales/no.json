@@ -1,0 +1,68 @@
+{
+  "common": {
+    "loading": "Laster...",
+    "error": "Feil",
+    "success": "Suksess",
+    "cancel": "Avbryt",
+    "save": "Lagre",
+    "delete": "Slett",
+    "edit": "Rediger",
+    "view": "Vis",
+    "close": "Lukk",
+    "next": "Neste",
+    "previous": "Forrige",
+    "continue": "Fortsett",
+    "complete": "Fullfør",
+    "start": "Start",
+    "stop": "Stopp",
+    "pause": "Pause",
+    "resume": "Gjenoppta"
+  },
+  "navigation": {
+    "overview": "Oversikt",
+    "strategies": "Strategier",
+    "positions": "Posisjoner",
+    "orders": "Ordrer",
+    "education": "Utdanning",
+    "riskMonitor": "Risikomonitor",
+    "auditTrail": "Revisjonsspor",
+    "compliance": "Etterlevelse",
+    "gamification": "Fremgang",
+    "performance": "Ytelse",
+    "latency": "Latens",
+    "alerts": "Varsler",
+    "settings": "Innstillinger",
+    "help": "Hjelp"
+  },
+  "trading": {
+    "portfolio": {
+      "value": "Porteføljeverdi",
+      "dailyPnl": "Daglig T&F",
+      "totalPnl": "Total T&F",
+      "buyingPower": "Kjøpekraft",
+      "marginUsed": "Brukt Margin",
+      "riskScore": "Risikoscore"
+    },
+    "strategies": {
+      "title": "Trading Strategier",
+      "active": "Aktiv",
+      "paused": "Pauset",
+      "stopped": "Stoppet"
+    }
+  },
+  "education": {
+    "title": "Utdanning & Sertifisering",
+    "subtitle": "Mestre avanserte trading-konsepter gjennom gamifisert læring",
+    "modules": "Moduler",
+    "interactive": "Interaktiv",
+    "concepts": "Konsepter"
+  },
+  "gamification": {
+    "title": "Fremgang & Prestasjoner",
+    "subtitle": "Forbedre dine trading-ferdigheter gjennom gamifisert læring",
+    "level": "Nivå",
+    "xp": "XP",
+    "streak": "dagers streak",
+    "badges": "merker"
+  }
+}

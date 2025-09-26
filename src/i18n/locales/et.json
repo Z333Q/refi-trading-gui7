@@ -1,0 +1,68 @@
+{
+  "common": {
+    "loading": "Laadimine...",
+    "error": "Viga",
+    "success": "Edu",
+    "cancel": "Tühista",
+    "save": "Salvesta",
+    "delete": "Kustuta",
+    "edit": "Muuda",
+    "view": "Vaata",
+    "close": "Sulge",
+    "next": "Järgmine",
+    "previous": "Eelmine",
+    "continue": "Jätka",
+    "complete": "Lõpeta",
+    "start": "Alusta",
+    "stop": "Peata",
+    "pause": "Paus",
+    "resume": "Jätka"
+  },
+  "navigation": {
+    "overview": "Ülevaade",
+    "strategies": "Strateegiad",
+    "positions": "Positsioonid",
+    "orders": "Tellimused",
+    "education": "Haridus",
+    "riskMonitor": "Riski Monitor",
+    "auditTrail": "Auditi Rada",
+    "compliance": "Vastavus",
+    "gamification": "Edenemine",
+    "performance": "Jõudlus",
+    "latency": "Latentsus",
+    "alerts": "Hoiatused",
+    "settings": "Seaded",
+    "help": "Abi"
+  },
+  "trading": {
+    "portfolio": {
+      "value": "Portfelli Väärtus",
+      "dailyPnl": "Päevane K&K",
+      "totalPnl": "Kogु K&K",
+      "buyingPower": "Ostujõud",
+      "marginUsed": "Kasutatud Marginaal",
+      "riskScore": "Riski Skoor"
+    },
+    "strategies": {
+      "title": "Kauplemise Strateegiad",
+      "active": "Aktiivne",
+      "paused": "Peatatud",
+      "stopped": "Lõpetatud"
+    }
+  },
+  "education": {
+    "title": "Haridus ja Sertifitseerimine",
+    "subtitle": "Omanda kõrgtasemel kauplemise kontseptsioonid mängulise õppimise kaudu",
+    "modules": "Moodulid",
+    "interactive": "Interaktiivne",
+    "concepts": "Kontseptsioonid"
+  },
+  "gamification": {
+    "title": "Edenemine ja Saavutused",
+    "subtitle": "Paranda oma kauplemise oskusi mängulise õppimise kaudu",
+    "level": "Tase",
+    "xp": "XP",
+    "streak": "päeva järjest",
+    "badges": "märgid"
+  }
+}

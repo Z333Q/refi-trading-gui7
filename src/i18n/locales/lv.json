@@ -1,0 +1,68 @@
+{
+  "common": {
+    "loading": "Ielādē...",
+    "error": "Kļūda",
+    "success": "Veiksmīgi",
+    "cancel": "Atcelt",
+    "save": "Saglabāt",
+    "delete": "Dzēst",
+    "edit": "Rediģēt",
+    "view": "Skatīt",
+    "close": "Aizvērt",
+    "next": "Nākamais",
+    "previous": "Iepriekšējais",
+    "continue": "Turpināt",
+    "complete": "Pabeigt",
+    "start": "Sākt",
+    "stop": "Apturēt",
+    "pause": "Pauze",
+    "resume": "Atsākt"
+  },
+  "navigation": {
+    "overview": "Pārskats",
+    "strategies": "Stratēģijas",
+    "positions": "Pozīcijas",
+    "orders": "Pasūtījumi",
+    "education": "Izglītība",
+    "riskMonitor": "Riska Monitors",
+    "auditTrail": "Audita Ceļš",
+    "compliance": "Atbilstība",
+    "gamification": "Progress",
+    "performance": "Veiktspēja",
+    "latency": "Latentums",
+    "alerts": "Brīdinājumi",
+    "settings": "Iestatījumi",
+    "help": "Palīdzība"
+  },
+  "trading": {
+    "portfolio": {
+      "value": "Portfeļa Vērtība",
+      "dailyPnl": "Dienas P&Z",
+      "totalPnl": "Kopējais P&Z",
+      "buyingPower": "Pirkšanas Spēks",
+      "marginUsed": "Izmantotā Marža",
+      "riskScore": "Riska Reitings"
+    },
+    "strategies": {
+      "title": "Tirdzniecības Stratēģijas",
+      "active": "Aktīvs",
+      "paused": "Apturēts",
+      "stopped": "Pārtraukts"
+    }
+  },
+  "education": {
+    "title": "Izglītība un Sertifikācija",
+    "subtitle": "Apgūstiet progresīvus tirdzniecības konceptus ar spēlificētu mācīšanos",
+    "modules": "Moduļi",
+    "interactive": "Interaktīvs",
+    "concepts": "Koncepti"
+  },
+  "gamification": {
+    "title": "Progress un Sasniegumi",
+    "subtitle": "Uzlabojiet savas tirdzniecības prasmes ar spēlificētu mācīšanos",
+    "level": "Līmenis",
+    "xp": "XP",
+    "streak": "dienu sērija",
+    "badges": "nozīmītes"
+  }
+}

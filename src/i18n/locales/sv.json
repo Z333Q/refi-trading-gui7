@@ -1,0 +1,68 @@
+{
+  "common": {
+    "loading": "Laddar...",
+    "error": "Fel",
+    "success": "Framgång",
+    "cancel": "Avbryt",
+    "save": "Spara",
+    "delete": "Ta bort",
+    "edit": "Redigera",
+    "view": "Visa",
+    "close": "Stäng",
+    "next": "Nästa",
+    "previous": "Föregående",
+    "continue": "Fortsätt",
+    "complete": "Slutför",
+    "start": "Starta",
+    "stop": "Stoppa",
+    "pause": "Pausa",
+    "resume": "Återuppta"
+  },
+  "navigation": {
+    "overview": "Översikt",
+    "strategies": "Strategier",
+    "positions": "Positioner",
+    "orders": "Order",
+    "education": "Utbildning",
+    "riskMonitor": "Riskmonitor",
+    "auditTrail": "Revisionsspår",
+    "compliance": "Efterlevnad",
+    "gamification": "Framsteg",
+    "performance": "Prestanda",
+    "latency": "Latens",
+    "alerts": "Varningar",
+    "settings": "Inställningar",
+    "help": "Hjälp"
+  },
+  "trading": {
+    "portfolio": {
+      "value": "Portföljvärde",
+      "dailyPnl": "Daglig V&F",
+      "totalPnl": "Total V&F",
+      "buyingPower": "Köpkraft",
+      "marginUsed": "Använd Marginal",
+      "riskScore": "Riskpoäng"
+    },
+    "strategies": {
+      "title": "Trading Strategier",
+      "active": "Aktiv",
+      "paused": "Pausad",
+      "stopped": "Stoppad"
+    }
+  },
+  "education": {
+    "title": "Utbildning & Certifiering",
+    "subtitle": "Bemästra avancerade trading-koncept genom gamifierat lärande",
+    "modules": "Moduler",
+    "interactive": "Interaktiv",
+    "concepts": "Koncept"
+  },
+  "gamification": {
+    "title": "Framsteg & Prestationer",
+    "subtitle": "Förbättra dina trading-färdigheter genom gamifierat lärande",
+    "level": "Nivå",
+    "xp": "XP",
+    "streak": "dagars streak",
+    "badges": "märken"
+  }
+}

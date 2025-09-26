@@ -1,0 +1,68 @@
+{
+  "common": {
+    "loading": "लोड हो रहा है...",
+    "error": "त्रुटि",
+    "success": "सफलता",
+    "cancel": "रद्द करें",
+    "save": "सेव करें",
+    "delete": "हटाएं",
+    "edit": "संपादित करें",
+    "view": "देखें",
+    "close": "बंद करें",
+    "next": "अगला",
+    "previous": "पिछला",
+    "continue": "जारी रखें",
+    "complete": "पूरा करें",
+    "start": "शुरू करें",
+    "stop": "रोकें",
+    "pause": "रोकें",
+    "resume": "फिर से शुरू करें"
+  },
+  "navigation": {
+    "overview": "अवलोकन",
+    "strategies": "रणनीतियां",
+    "positions": "पोजीशन",
+    "orders": "ऑर्डर",
+    "education": "शिक्षा",
+    "riskMonitor": "जोखिम मॉनिटर",
+    "auditTrail": "ऑडिट ट्रेल",
+    "compliance": "अनुपालन",
+    "gamification": "प्रगति",
+    "performance": "प्रदर्शन",
+    "latency": "विलंबता",
+    "alerts": "अलर्ट",
+    "settings": "सेटिंग्स",
+    "help": "सहायता"
+  },
+  "trading": {
+    "portfolio": {
+      "value": "पोर्टफोलियो मूल्य",
+      "dailyPnl": "दैनिक लाभ-हानि",
+      "totalPnl": "कुल लाभ-हानि",
+      "buyingPower": "खरीदारी शक्ति",
+      "marginUsed": "उपयोग किया गया मार्जिन",
+      "riskScore": "जोखिम स्कोर"
+    },
+    "strategies": {
+      "title": "ट्रेडिंग रणनीतियां",
+      "active": "सक्रिय",
+      "paused": "रोका गया",
+      "stopped": "बंद"
+    }
+  },
+  "education": {
+    "title": "शिक्षा और प्रमाणन",
+    "subtitle": "गेमिफाइड लर्निंग के माध्यम से उन्नत ट्रेडिंग अवधारणाओं में महारत हासिल करें",
+    "modules": "मॉड्यूल",
+    "interactive": "इंटरैक्टिव",
+    "concepts": "अवधारणाएं"
+  },
+  "gamification": {
+    "title": "प्रगति और उपलब्धियां",
+    "subtitle": "गेमिफाइड लर्निंग के माध्यम से अपने ट्रेडिंग कौशल में सुधार करें",
+    "level": "स्तर",
+    "xp": "अनुभव अंक",
+    "streak": "दिन की लकीर",
+    "badges": "बैज"
+  }
+}

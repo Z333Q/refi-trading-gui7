@@ -1,0 +1,68 @@
+{
+  "common": {
+    "loading": "Nalaganje...",
+    "error": "Napaka",
+    "success": "Uspeh",
+    "cancel": "Prekliči",
+    "save": "Shrani",
+    "delete": "Izbriši",
+    "edit": "Uredi",
+    "view": "Prikaži",
+    "close": "Zapri",
+    "next": "Naprej",
+    "previous": "Nazaj",
+    "continue": "Nadaljuj",
+    "complete": "Dokončaj",
+    "start": "Začni",
+    "stop": "Ustavi",
+    "pause": "Premor",
+    "resume": "Nadaljuj"
+  },
+  "navigation": {
+    "overview": "Pregled",
+    "strategies": "Strategije",
+    "positions": "Pozicije",
+    "orders": "Naročila",
+    "education": "Izobraževanje",
+    "riskMonitor": "Monitor Tveganja",
+    "auditTrail": "Revizijska Sled",
+    "compliance": "Skladnost",
+    "gamification": "Napredek",
+    "performance": "Uspešnost",
+    "latency": "Zakasnitev",
+    "alerts": "Opozorila",
+    "settings": "Nastavitve",
+    "help": "Pomoč"
+  },
+  "trading": {
+    "portfolio": {
+      "value": "Vrednost Portfelja",
+      "dailyPnl": "Dnevni D&I",
+      "totalPnl": "Skupni D&I",
+      "buyingPower": "Kupna Moč",
+      "marginUsed": "Uporabljena Marža",
+      "riskScore": "Ocena Tveganja"
+    },
+    "strategies": {
+      "title": "Trgovalne Strategije",
+      "active": "Aktiven",
+      "paused": "Ustavljen",
+      "stopped": "Zaustavljen"
+    }
+  },
+  "education": {
+    "title": "Izobraževanje in Certificiranje",
+    "subtitle": "Obvladajte napredne trgovalne koncepte z igrificiranim učenjem",
+    "modules": "Moduli",
+    "interactive": "Interaktivno",
+    "concepts": "Koncepti"
+  },
+  "gamification": {
+    "title": "Napredek in Dosežki",
+    "subtitle": "Izboljšajte svoje trgovalne veščine z igrificiranim učenjem",
+    "level": "Raven",
+    "xp": "XP",
+    "streak": "dni zapored",
+    "badges": "značke"
+  }
+}

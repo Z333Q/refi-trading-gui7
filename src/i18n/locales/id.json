@@ -1,0 +1,68 @@
+{
+  "common": {
+    "loading": "Memuat...",
+    "error": "Kesalahan",
+    "success": "Berhasil",
+    "cancel": "Batal",
+    "save": "Simpan",
+    "delete": "Hapus",
+    "edit": "Edit",
+    "view": "Lihat",
+    "close": "Tutup",
+    "next": "Selanjutnya",
+    "previous": "Sebelumnya",
+    "continue": "Lanjutkan",
+    "complete": "Selesai",
+    "start": "Mulai",
+    "stop": "Berhenti",
+    "pause": "Jeda",
+    "resume": "Lanjutkan"
+  },
+  "navigation": {
+    "overview": "Ringkasan",
+    "strategies": "Strategi",
+    "positions": "Posisi",
+    "orders": "Pesanan",
+    "education": "Pendidikan",
+    "riskMonitor": "Monitor Risiko",
+    "auditTrail": "Jejak Audit",
+    "compliance": "Kepatuhan",
+    "gamification": "Kemajuan",
+    "performance": "Kinerja",
+    "latency": "Latensi",
+    "alerts": "Peringatan",
+    "settings": "Pengaturan",
+    "help": "Bantuan"
+  },
+  "trading": {
+    "portfolio": {
+      "value": "Nilai Portofolio",
+      "dailyPnl": "L&R Harian",
+      "totalPnl": "Total L&R",
+      "buyingPower": "Daya Beli",
+      "marginUsed": "Margin Terpakai",
+      "riskScore": "Skor Risiko"
+    },
+    "strategies": {
+      "title": "Strategi Trading",
+      "active": "Aktif",
+      "paused": "Dijeda",
+      "stopped": "Dihentikan"
+    }
+  },
+  "education": {
+    "title": "Pendidikan dan Sertifikasi",
+    "subtitle": "Kuasai konsep trading lanjutan melalui pembelajaran yang digamifikasi",
+    "modules": "Modul",
+    "interactive": "Interaktif",
+    "concepts": "Konsep"
+  },
+  "gamification": {
+    "title": "Kemajuan dan Pencapaian",
+    "subtitle": "Tingkatkan keterampilan trading Anda melalui pembelajaran yang digamifikasi",
+    "level": "Level",
+    "xp": "Poin Pengalaman",
+    "streak": "hari berturut-turut",
+    "badges": "lencana"
+  }
+}

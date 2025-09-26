@@ -1,0 +1,68 @@
+{
+  "common": {
+    "loading": "N gbé...",
+    "error": "Àṣìṣe",
+    "success": "Àṣeyọrí",
+    "cancel": "Fagilee",
+    "save": "Fi pamọ́",
+    "delete": "Pa rẹ́",
+    "edit": "Ṣàtúnṣe",
+    "view": "Wo",
+    "close": "Ti",
+    "next": "Tókàn",
+    "previous": "Tẹ́lẹ̀",
+    "continue": "Tẹ̀síwájú",
+    "complete": "Parí",
+    "start": "Bẹ̀rẹ̀",
+    "stop": "Dúró",
+    "pause": "Dúró díẹ̀",
+    "resume": "Tẹ̀síwájú"
+  },
+  "navigation": {
+    "overview": "Àkópọ̀",
+    "strategies": "Àwọn ìlànà",
+    "positions": "Àwọn ipò",
+    "orders": "Àwọn àṣẹ",
+    "education": "Ẹ̀kọ́",
+    "riskMonitor": "Atọ́jú Ewu",
+    "auditTrail": "Ọ̀nà Àyẹ̀wò",
+    "compliance": "Ìbámu",
+    "gamification": "Ìlọsíwájú",
+    "performance": "Ìṣiṣẹ́",
+    "latency": "Ìdádúró",
+    "alerts": "Àwọn ìkìlọ̀",
+    "settings": "Àwọn ètò",
+    "help": "Ìrànlọ́wọ́"
+  },
+  "trading": {
+    "portfolio": {
+      "value": "Iye Portfolio",
+      "dailyPnl": "Èrè àti Òfò Ojoojúmọ́",
+      "totalPnl": "Àpapọ̀ Èrè àti Òfò",
+      "buyingPower": "Agbára Rírà",
+      "marginUsed": "Margin Tí a Lò",
+      "riskScore": "Àmì Ewu"
+    },
+    "strategies": {
+      "title": "Àwọn Ìlànà Ìṣòwò",
+      "active": "Tí ń ṣiṣẹ́",
+      "paused": "Tí a dá dúró",
+      "stopped": "Tí a dá dúró"
+    }
+  },
+  "education": {
+    "title": "Ẹ̀kọ́ àti Ìjẹ́rìí",
+    "subtitle": "Kọ́ àwọn èrò ìṣòwò tí ó ga nípa ẹ̀kọ́ eré",
+    "modules": "Àwọn mọ́dúù",
+    "interactive": "Ìbáraenisepo",
+    "concepts": "Àwọn èrò"
+  },
+  "gamification": {
+    "title": "Ìlọsíwájú àti Àwọn Àṣeyọrí",
+    "subtitle": "Mú àwọn ọ̀gbọ́n ìṣòwò rẹ dára sí i nípa ẹ̀kọ́ eré",
+    "level": "Ipele",
+    "xp": "Àwọn Àmì Ìrírí",
+    "streak": "àwọn ọjọ́ tí ó tẹ̀le ara wọn",
+    "badges": "àwọn àmì"
+  }
+}

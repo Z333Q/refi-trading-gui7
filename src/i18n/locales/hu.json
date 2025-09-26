@@ -1,0 +1,68 @@
+{
+  "common": {
+    "loading": "Betöltés...",
+    "error": "Hiba",
+    "success": "Siker",
+    "cancel": "Mégse",
+    "save": "Mentés",
+    "delete": "Törlés",
+    "edit": "Szerkesztés",
+    "view": "Megtekintés",
+    "close": "Bezárás",
+    "next": "Következő",
+    "previous": "Előző",
+    "continue": "Folytatás",
+    "complete": "Befejezés",
+    "start": "Indítás",
+    "stop": "Leállítás",
+    "pause": "Szünet",
+    "resume": "Folytatás"
+  },
+  "navigation": {
+    "overview": "Áttekintés",
+    "strategies": "Stratégiák",
+    "positions": "Pozíciók",
+    "orders": "Megbízások",
+    "education": "Oktatás",
+    "riskMonitor": "Kockázat Monitor",
+    "auditTrail": "Audit Nyomvonal",
+    "compliance": "Megfelelőség",
+    "gamification": "Haladás",
+    "performance": "Teljesítmény",
+    "latency": "Késleltetés",
+    "alerts": "Riasztások",
+    "settings": "Beállítások",
+    "help": "Segítség"
+  },
+  "trading": {
+    "portfolio": {
+      "value": "Portfólió Érték",
+      "dailyPnl": "Napi N&V",
+      "totalPnl": "Összes N&V",
+      "buyingPower": "Vásárlóerő",
+      "marginUsed": "Használt Fedezet",
+      "riskScore": "Kockázati Pontszám"
+    },
+    "strategies": {
+      "title": "Kereskedési Stratégiák",
+      "active": "Aktív",
+      "paused": "Szüneteltetve",
+      "stopped": "Leállítva"
+    }
+  },
+  "education": {
+    "title": "Oktatás és Tanúsítás",
+    "subtitle": "Sajátítsa el a fejlett kereskedési koncepciókat gamifikált tanulással",
+    "modules": "Modulok",
+    "interactive": "Interaktív",
+    "concepts": "Koncepciók"
+  },
+  "gamification": {
+    "title": "Haladás és Eredmények",
+    "subtitle": "Fejlessze kereskedési készségeit gamifikált tanulással",
+    "level": "Szint",
+    "xp": "XP",
+    "streak": "napos sorozat",
+    "badges": "jelvények"
+  }
+}

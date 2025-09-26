@@ -1,0 +1,68 @@
+{
+  "common": {
+    "loading": "Se încarcă...",
+    "error": "Eroare",
+    "success": "Succes",
+    "cancel": "Anulează",
+    "save": "Salvează",
+    "delete": "Șterge",
+    "edit": "Editează",
+    "view": "Vizualizează",
+    "close": "Închide",
+    "next": "Următorul",
+    "previous": "Anterior",
+    "continue": "Continuă",
+    "complete": "Completează",
+    "start": "Începe",
+    "stop": "Oprește",
+    "pause": "Pauză",
+    "resume": "Reia"
+  },
+  "navigation": {
+    "overview": "Prezentare Generală",
+    "strategies": "Strategii",
+    "positions": "Poziții",
+    "orders": "Comenzi",
+    "education": "Educație",
+    "riskMonitor": "Monitor Risc",
+    "auditTrail": "Urmă Audit",
+    "compliance": "Conformitate",
+    "gamification": "Progres",
+    "performance": "Performanță",
+    "latency": "Latență",
+    "alerts": "Alerte",
+    "settings": "Setări",
+    "help": "Ajutor"
+  },
+  "trading": {
+    "portfolio": {
+      "value": "Valoarea Portofoliului",
+      "dailyPnl": "P&P Zilnic",
+      "totalPnl": "P&P Total",
+      "buyingPower": "Puterea de Cumpărare",
+      "marginUsed": "Marja Utilizată",
+      "riskScore": "Scorul de Risc"
+    },
+    "strategies": {
+      "title": "Strategii de Trading",
+      "active": "Activ",
+      "paused": "Întrerupt",
+      "stopped": "Oprit"
+    }
+  },
+  "education": {
+    "title": "Educație și Certificare",
+    "subtitle": "Stăpânește conceptele avansate de trading prin învățare gamificată",
+    "modules": "Module",
+    "interactive": "Interactiv",
+    "concepts": "Concepte"
+  },
+  "gamification": {
+    "title": "Progres și Realizări",
+    "subtitle": "Îmbunătățește-ți abilitățile de trading prin învățare gamificată",
+    "level": "Nivel",
+    "xp": "XP",
+    "streak": "zile consecutive",
+    "badges": "insigne"
+  }
+}

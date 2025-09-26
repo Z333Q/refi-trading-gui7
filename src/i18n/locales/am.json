@@ -1,0 +1,68 @@
+{
+  "common": {
+    "loading": "እየጫነ ነው...",
+    "error": "ስህተት",
+    "success": "ስኬት",
+    "cancel": "ሰርዝ",
+    "save": "አስቀምጥ",
+    "delete": "ሰርዝ",
+    "edit": "አርም",
+    "view": "ተመልከት",
+    "close": "ዝጋ",
+    "next": "ቀጣይ",
+    "previous": "ቀዳሚ",
+    "continue": "ቀጥል",
+    "complete": "ጨርስ",
+    "start": "ጀምር",
+    "stop": "አቁም",
+    "pause": "ቆም",
+    "resume": "ቀጥል"
+  },
+  "navigation": {
+    "overview": "አጠቃላይ እይታ",
+    "strategies": "ስትራቴጂዎች",
+    "positions": "ቦታዎች",
+    "orders": "ትዕዛዞች",
+    "education": "ትምህርት",
+    "riskMonitor": "የአደጋ ክትትል",
+    "auditTrail": "የኦዲት መንገድ",
+    "compliance": "ተገዢነት",
+    "gamification": "እድገት",
+    "performance": "አፈጻጸም",
+    "latency": "መዘግየት",
+    "alerts": "ማስጠንቀቂያዎች",
+    "settings": "ቅንብሮች",
+    "help": "እርዳታ"
+  },
+  "trading": {
+    "portfolio": {
+      "value": "የፖርትፎሊዮ ዋጋ",
+      "dailyPnl": "ዕለታዊ ትርፍ እና ኪሳራ",
+      "totalPnl": "አጠቃላይ ትርፍ እና ኪሳራ",
+      "buyingPower": "የመግዛት ኃይል",
+      "marginUsed": "ጥቅም ላይ የዋለ ማርጂን",
+      "riskScore": "የአደጋ ነጥብ"
+    },
+    "strategies": {
+      "title": "የንግድ ስትራቴጂዎች",
+      "active": "ንቁ",
+      "paused": "ቆሟል",
+      "stopped": "ቆሟል"
+    }
+  },
+  "education": {
+    "title": "ትምህርት እና ምስክር ወረቀት",
+    "subtitle": "በጨዋታ ላይ በተመሰረተ ትምህርት የላቀ የንግድ ፅንሰ-ሀሳቦችን ይማሩ",
+    "modules": "ሞጁሎች",
+    "interactive": "በይነተገናኝ",
+    "concepts": "ፅንሰ-ሀሳቦች"
+  },
+  "gamification": {
+    "title": "እድገት እና ስኬቶች",
+    "subtitle": "በጨዋታ ላይ በተመሰረተ ትምህርት የንግድ ክህሎትዎን ያሻሽሉ",
+    "level": "ደረጃ",
+    "xp": "የልምድ ነጥቦች",
+    "streak": "ተከታታይ ቀናት",
+    "badges": "ባጆች"
+  }
+}

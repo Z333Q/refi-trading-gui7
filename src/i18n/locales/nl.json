@@ -1,0 +1,68 @@
+{
+  "common": {
+    "loading": "Laden...",
+    "error": "Fout",
+    "success": "Succes",
+    "cancel": "Annuleren",
+    "save": "Opslaan",
+    "delete": "Verwijderen",
+    "edit": "Bewerken",
+    "view": "Bekijken",
+    "close": "Sluiten",
+    "next": "Volgende",
+    "previous": "Vorige",
+    "continue": "Doorgaan",
+    "complete": "Voltooien",
+    "start": "Starten",
+    "stop": "Stoppen",
+    "pause": "Pauzeren",
+    "resume": "Hervatten"
+  },
+  "navigation": {
+    "overview": "Overzicht",
+    "strategies": "Strategieën",
+    "positions": "Posities",
+    "orders": "Orders",
+    "education": "Onderwijs",
+    "riskMonitor": "Risico Monitor",
+    "auditTrail": "Audit Trail",
+    "compliance": "Compliance",
+    "gamification": "Voortgang",
+    "performance": "Prestaties",
+    "latency": "Latentie",
+    "alerts": "Waarschuwingen",
+    "settings": "Instellingen",
+    "help": "Help"
+  },
+  "trading": {
+    "portfolio": {
+      "value": "Portfolio Waarde",
+      "dailyPnl": "Dagelijkse W&V",
+      "totalPnl": "Totale W&V",
+      "buyingPower": "Koopkracht",
+      "marginUsed": "Gebruikte Marge",
+      "riskScore": "Risico Score"
+    },
+    "strategies": {
+      "title": "Trading Strategieën",
+      "active": "Actief",
+      "paused": "Gepauzeerd",
+      "stopped": "Gestopt"
+    }
+  },
+  "education": {
+    "title": "Onderwijs & Certificering",
+    "subtitle": "Beheers geavanceerde trading concepten door gamified leren",
+    "modules": "Modules",
+    "interactive": "Interactief",
+    "concepts": "Concepten"
+  },
+  "gamification": {
+    "title": "Voortgang & Prestaties",
+    "subtitle": "Verbeter je trading vaardigheden door gamified leren",
+    "level": "Level",
+    "xp": "XP",
+    "streak": "dagen streak",
+    "badges": "badges"
+  }
+}

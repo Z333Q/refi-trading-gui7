@@ -1,0 +1,68 @@
+{
+  "common": {
+    "loading": "Ladataan...",
+    "error": "Virhe",
+    "success": "Onnistui",
+    "cancel": "Peruuta",
+    "save": "Tallenna",
+    "delete": "Poista",
+    "edit": "Muokkaa",
+    "view": "Näytä",
+    "close": "Sulje",
+    "next": "Seuraava",
+    "previous": "Edellinen",
+    "continue": "Jatka",
+    "complete": "Valmis",
+    "start": "Aloita",
+    "stop": "Pysäytä",
+    "pause": "Keskeytä",
+    "resume": "Jatka"
+  },
+  "navigation": {
+    "overview": "Yleiskatsaus",
+    "strategies": "Strategiat",
+    "positions": "Positiot",
+    "orders": "Tilaukset",
+    "education": "Koulutus",
+    "riskMonitor": "Riskimonitori",
+    "auditTrail": "Tarkastuspolku",
+    "compliance": "Vaatimustenmukaisuus",
+    "gamification": "Edistyminen",
+    "performance": "Suorituskyky",
+    "latency": "Viive",
+    "alerts": "Hälytykset",
+    "settings": "Asetukset",
+    "help": "Ohje"
+  },
+  "trading": {
+    "portfolio": {
+      "value": "Salkun Arvo",
+      "dailyPnl": "Päivittäinen T&T",
+      "totalPnl": "Kokonais T&T",
+      "buyingPower": "Ostovoima",
+      "marginUsed": "Käytetty Marginaali",
+      "riskScore": "Riskipisteet"
+    },
+    "strategies": {
+      "title": "Kaupankäyntistrategiat",
+      "active": "Aktiivinen",
+      "paused": "Keskeytetty",
+      "stopped": "Pysäytetty"
+    }
+  },
+  "education": {
+    "title": "Koulutus & Sertifiointi",
+    "subtitle": "Hallitse edistyneitä kaupankäyntikonsepteja pelillistetyn oppimisen kautta",
+    "modules": "Moduulit",
+    "interactive": "Interaktiivinen",
+    "concepts": "Käsitteet"
+  },
+  "gamification": {
+    "title": "Edistyminen & Saavutukset",
+    "subtitle": "Paranna kaupankäyntitaitojasi pelillistetyn oppimisen kautta",
+    "level": "Taso",
+    "xp": "XP",
+    "streak": "päivän putki",
+    "badges": "merkit"
+  }
+}
