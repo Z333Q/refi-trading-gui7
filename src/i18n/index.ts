@@ -1,7 +1,6 @@
 import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
 import LanguageDetector from 'i18next-browser-languagedetector'
-import Backend from 'i18next-http-backend'
 
 // Import translation files
 import enTranslations from './locales/en.json'
@@ -49,147 +48,63 @@ import igTranslations from './locales/ig.json'
 import haTranslations from './locales/ha.json'
 
 const resources = {
-  en: {
-    translation: enTranslations
-  },
-  ar: {
-    translation: arTranslations
-  },
-  fr: {
-    translation: frTranslations
-  },
-  es: {
-    translation: esTranslations
-  },
-  de: {
-    translation: deTranslations
-  },
-  it: {
-    translation: itTranslations
-  },
-  pt: {
-    translation: ptTranslations
-  },
-  ru: {
-    translation: ruTranslations
-  },
-  zh: {
-    translation: zhTranslations
-  },
-  ja: {
-    translation: jaTranslations
-  },
-  ko: {
-    translation: koTranslations
-  },
-  hi: {
-    translation: hiTranslations
-  },
-  tr: {
-    translation: trTranslations
-  },
-  nl: {
-    translation: nlTranslations
-  },
-  sv: {
-    translation: svTranslations
-  },
-  no: {
-    translation: noTranslations
-  },
-  da: {
-    translation: daTranslations
-  },
-  fi: {
-    translation: fiTranslations
-  },
-  pl: {
-    translation: plTranslations
-  },
-  cs: {
-    translation: csTranslations
-  },
-  hu: {
-    translation: huTranslations
-  },
-  ro: {
-    translation: roTranslations
-  },
-  bg: {
-    translation: bgTranslations
-  },
-  hr: {
-    translation: hrTranslations
-  },
-  sk: {
-    translation: skTranslations
-  },
-  sl: {
-    translation: slTranslations
-  },
-  et: {
-    translation: etTranslations
-  },
-  lv: {
-    translation: lvTranslations
-  },
-  lt: {
-    translation: ltTranslations
-  },
-  el: {
-    translation: elTranslations
-  },
-  he: {
-    translation: heTranslations
-  },
-  fa: {
-    translation: faTranslations
-  },
-  ur: {
-    translation: urTranslations
-  },
-  th: {
-    translation: thTranslations
-  },
-  vi: {
-    translation: viTranslations
-  },
-  id: {
-    translation: idTranslations
-  },
-  ms: {
-    translation: msTranslations
-  },
-  tl: {
-    translation: tlTranslations
-  },
-  sw: {
-    translation: swTranslations
-  },
-  am: {
-    translation: amTranslations
-  },
-  yo: {
-    translation: yoTranslations
-  },
-  ig: {
-    translation: igTranslations
-  },
-  ha: {
-    translation: haTranslations
-  }
+  en: { translation: enTranslations },
+  ar: { translation: arTranslations },
+  fr: { translation: frTranslations },
+  es: { translation: esTranslations },
+  de: { translation: deTranslations },
+  it: { translation: itTranslations },
+  pt: { translation: ptTranslations },
+  ru: { translation: ruTranslations },
+  zh: { translation: zhTranslations },
+  ja: { translation: jaTranslations },
+  ko: { translation: koTranslations },
+  hi: { translation: hiTranslations },
+  tr: { translation: trTranslations },
+  nl: { translation: nlTranslations },
+  sv: { translation: svTranslations },
+  no: { translation: noTranslations },
+  da: { translation: daTranslations },
+  fi: { translation: fiTranslations },
+  pl: { translation: plTranslations },
+  cs: { translation: csTranslations },
+  hu: { translation: huTranslations },
+  ro: { translation: roTranslations },
+  bg: { translation: bgTranslations },
+  hr: { translation: hrTranslations },
+  sk: { translation: skTranslations },
+  sl: { translation: slTranslations },
+  et: { translation: etTranslations },
+  lv: { translation: lvTranslations },
+  lt: { translation: ltTranslations },
+  el: { translation: elTranslations },
+  he: { translation: heTranslations },
+  fa: { translation: faTranslations },
+  ur: { translation: urTranslations },
+  th: { translation: thTranslations },
+  vi: { translation: viTranslations },
+  id: { translation: idTranslations },
+  ms: { translation: msTranslations },
+  tl: { translation: tlTranslations },
+  sw: { translation: swTranslations },
+  am: { translation: amTranslations },
+  yo: { translation: yoTranslations },
+  ig: { translation: igTranslations },
+  ha: { translation: haTranslations }
 }
 
 i18n
-  .use(Backend)
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
     resources,
     fallbackLng: 'en',
-    debug: true,
+    debug: false,
     
-    // Ensure React integration works properly
+    interpolation: {
+      escapeValue: false, // React already does escaping
+    },
+    
     react: {
       useSuspense: false,
       bindI18n: 'languageChanged',
@@ -199,21 +114,11 @@ i18n
       transKeepBasicHtmlNodesFor: ['br', 'strong', 'i'],
     },
     
-    interpolation: {
-      escapeValue: false, // React already does escaping
-    },
-    
     detection: {
-      order: ['localStorage', 'sessionStorage', 'navigator', 'htmlTag'],
+      order: ['localStorage', 'navigator', 'htmlTag'],
       caches: ['localStorage'],
       lookupLocalStorage: 'i18nextLng',
-      lookupSessionStorage: 'i18nextLng',
     },
-    
-    // Remove backend since we're using inline resources
-    // backend: {
-    //   loadPath: '/locales/{{lng}}.json',
-    // },
   })
 
 export default i18n

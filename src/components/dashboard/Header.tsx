@@ -3,6 +3,7 @@ import { useDisconnect } from 'wagmi'
 import { Button } from '../ui/button'
 import { Badge } from '../ui/badge'
 import { LanguageSelector } from '../ui/LanguageSelector'
+import { LanguageSelector } from '../ui/LanguageSelector'
 import { WalletConnect } from '../wallet/WalletConnect'
 import { 
   Activity, 
@@ -12,7 +13,6 @@ import {
   ChevronDown,
   Menu
 } from 'lucide-react'
-
 interface HeaderProps {
   onMenuClick: () => void
 }

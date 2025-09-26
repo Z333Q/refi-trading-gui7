@@ -8,7 +8,6 @@ import { I18nProvider } from './components/ui/I18nProvider';
 import App from './App.tsx';
 import './index.css';
 import '@rainbow-me/rainbowkit/styles.css';
-import './i18n'; // Initialize i18n
 
 const queryClient = new QueryClient();
 

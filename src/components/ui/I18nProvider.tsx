@@ -1,32 +1,10 @@
 import React, { Suspense, useEffect, useState } from 'react'
-import { I18nextProvider, useTranslation } from 'react-i18next'
+import { I18nextProvider } from 'react-i18next'
 import i18n from '@/i18n'
 import { LoadingSpinner } from './LoadingSpinner'
 
 interface I18nProviderProps {
   children: React.ReactNode
-}
-
-// Force re-render component when language changes
-function LanguageChangeListener({ children }: { children: React.ReactNode }) {
-  const { i18n: i18nInstance } = useTranslation()
-  const [, forceUpdate] = useState({})
-  
-  useEffect(() => {
-    const handleLanguageChange = () => {
-      forceUpdate({})
-    }
-    
-    i18nInstance.on('languageChanged', handleLanguageChange)
-    window.addEventListener('languageChanged', handleLanguageChange)
-    
-    return () => {
-      i18nInstance.off('languageChanged', handleLanguageChange)
-      window.removeEventListener('languageChanged', handleLanguageChange)
-    }
-  }, [i18nInstance])
-  
-  return <>{children}</>
 }
 
 export function I18nProvider({ children }: I18nProviderProps) {
@@ -40,6 +18,19 @@ export function I18nProvider({ children }: I18nProviderProps) {
         if (!i18n.isInitialized) {
           await i18n.init()
         }
+        
+        // Set up RTL for initial language
+        const currentLang = i18n.language
+        const rtlLanguages = ['ar', 'he', 'fa', 'ur']
+        
+        if (rtlLanguages.includes(currentLang)) {
+          document.documentElement.dir = 'rtl'
+        } else {
+          document.documentElement.dir = 'ltr'
+        }
+        
+        document.documentElement.lang = currentLang
+        
         setIsI18nReady(true)
       } catch (err) {
         console.error('Failed to initialize i18n:', err)
@@ -90,9 +81,7 @@ export function I18nProvider({ children }: I18nProviderProps) {
           </div>
         </div>
       }>
-        <LanguageChangeListener>
-          {children}
-        </LanguageChangeListener>
+        {children}
       </Suspense>
     </I18nextProvider>
   )

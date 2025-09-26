@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Button } from './button'
 import { Badge } from './badge'
@@ -55,35 +55,42 @@ const languages = [
 ]
 
 export function LanguageSelector() {
-  const { i18n, t } = useTranslation()
-  const [isOpen, setIsOpen] = React.useState(false)
+  const { i18n } = useTranslation()
+  const [isOpen, setIsOpen] = useState(false)
 
   const currentLanguage = languages.find(lang => lang.code === i18n.language) || languages[0]
 
-  const handleLanguageChange = (languageCode: string) => {
-    // Force language change and trigger re-render
-    i18n.changeLanguage(languageCode).then(() => {
-      // Force a re-render by updating a state or triggering an event
-      window.dispatchEvent(new Event('languageChanged'))
-    })
-    setIsOpen(false)
-    
-    // Update document direction for RTL languages
-    const selectedLang = languages.find(lang => lang.code === languageCode)
-    if (selectedLang?.rtl) {
-      document.documentElement.dir = 'rtl'
-      document.documentElement.lang = languageCode
-    } else {
-      document.documentElement.dir = 'ltr'
-      document.documentElement.lang = languageCode
+  const handleLanguageChange = async (languageCode: string) => {
+    try {
+      console.log('Changing language to:', languageCode)
+      
+      // Change the language
+      await i18n.changeLanguage(languageCode)
+      
+      // Update document direction for RTL languages
+      const selectedLang = languages.find(lang => lang.code === languageCode)
+      if (selectedLang?.rtl) {
+        document.documentElement.dir = 'rtl'
+        document.documentElement.lang = languageCode
+      } else {
+        document.documentElement.dir = 'ltr'
+        document.documentElement.lang = languageCode
+      }
+      
+      // Store in localStorage
+      localStorage.setItem('i18nextLng', languageCode)
+      
+      // Force a complete re-render by reloading the page
+      // This ensures all components update with the new language
+      window.location.reload()
+      
+    } catch (error) {
+      console.error('Error changing language:', error)
+      // Fallback: reload the page
+      window.location.reload()
     }
     
-    // Force page refresh if needed (fallback)
-    setTimeout(() => {
-      if (i18n.language !== languageCode) {
-        window.location.reload()
-      }
-    }, 1000)
+    setIsOpen(false)
   }
 
   return (
@@ -109,7 +116,7 @@ export function LanguageSelector() {
           />
           
           {/* Dropdown */}
-          <div className="absolute right-0 mt-2 w-48 bg-gray-950 border border-gray-800 rounded-lg shadow-lg z-50">
+          <div className="absolute right-0 mt-2 w-48 bg-gray-950 border border-gray-800 rounded-lg shadow-lg z-50 max-h-64 overflow-y-auto">
             <div className="p-2">
               {languages.map((language) => (
                 <button
@@ -134,7 +141,7 @@ export function LanguageSelector() {
             
             <div className="border-t border-gray-800 p-2">
               <div className="text-xs text-gray-500 px-3 py-1">
-                More languages coming soon
+                {languages.length} languages supported
               </div>
             </div>
           </div>
