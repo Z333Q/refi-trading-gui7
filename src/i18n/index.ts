@@ -187,24 +187,33 @@ i18n
   .init({
     resources,
     fallbackLng: 'en',
-    debug: false,
+    debug: true,
+    
+    // Ensure React integration works properly
+    react: {
+      useSuspense: false,
+      bindI18n: 'languageChanged',
+      bindI18nStore: '',
+      transEmptyNodeValue: '',
+      transSupportBasicHtmlNodes: true,
+      transKeepBasicHtmlNodesFor: ['br', 'strong', 'i'],
+    },
     
     interpolation: {
       escapeValue: false, // React already does escaping
     },
     
     detection: {
-      order: ['localStorage', 'navigator', 'htmlTag'],
+      order: ['localStorage', 'sessionStorage', 'navigator', 'htmlTag'],
       caches: ['localStorage'],
+      lookupLocalStorage: 'i18nextLng',
+      lookupSessionStorage: 'i18nextLng',
     },
     
-    backend: {
-      loadPath: '/locales/{{lng}}.json',
-    },
-    
-    react: {
-      useSuspense: false,
-    }
+    // Remove backend since we're using inline resources
+    // backend: {
+    //   loadPath: '/locales/{{lng}}.json',
+    // },
   })
 
 export default i18n

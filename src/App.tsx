@@ -17,11 +17,25 @@ import { TooltipProvider } from './components/ui/tooltip'
 import { PersistentPopoutTab } from './components/ui/PersistentPopoutTab'
 
 function App() {
-  const { ready } = useTranslation()
+  const { ready, i18n } = useTranslation()
   const [activeSection, setActiveSection] = useState('overview')
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [showOnboarding, setShowOnboarding] = useState(false)
   const [isInitialized, setIsInitialized] = useState(false)
+  const [, forceUpdate] = useState({})
+
+  // Force re-render when language changes
+  useEffect(() => {
+    const handleLanguageChange = () => {
+      forceUpdate({})
+    }
+    
+    i18n.on('languageChanged', handleLanguageChange)
+    
+    return () => {
+      i18n.off('languageChanged', handleLanguageChange)
+    }
+  }, [i18n])
 
   // Initialize app state
   useEffect(() => {

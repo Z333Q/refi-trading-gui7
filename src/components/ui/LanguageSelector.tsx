@@ -61,7 +61,11 @@ export function LanguageSelector() {
   const currentLanguage = languages.find(lang => lang.code === i18n.language) || languages[0]
 
   const handleLanguageChange = (languageCode: string) => {
-    i18n.changeLanguage(languageCode)
+    // Force language change and trigger re-render
+    i18n.changeLanguage(languageCode).then(() => {
+      // Force a re-render by updating a state or triggering an event
+      window.dispatchEvent(new Event('languageChanged'))
+    })
     setIsOpen(false)
     
     // Update document direction for RTL languages
@@ -73,6 +77,13 @@ export function LanguageSelector() {
       document.documentElement.dir = 'ltr'
       document.documentElement.lang = languageCode
     }
+    
+    // Force page refresh if needed (fallback)
+    setTimeout(() => {
+      if (i18n.language !== languageCode) {
+        window.location.reload()
+      }
+    }, 1000)
   }
 
   return (
