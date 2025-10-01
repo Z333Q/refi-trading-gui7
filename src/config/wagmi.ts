@@ -7,9 +7,9 @@ import { mainnet, polygon, optimism, arbitrum, base } from 'wagmi/chains'
 const projectId = import.meta.env.VITE_WALLETCONNECT_PROJECT_ID
 
 if (!projectId || projectId === 'your_walletconnect_project_id_here') {
-  console.error('SECURITY WARNING: WalletConnect Project ID not configured properly')
-  console.error('Please set VITE_WALLETCONNECT_PROJECT_ID in your .env file')
-  console.error('Get your project ID from: https://cloud.walletconnect.com/')
+  console.warn('SECURITY WARNING: WalletConnect Project ID not configured properly')
+  console.warn('Please set VITE_WALLETCONNECT_PROJECT_ID in your .env file')
+  console.warn('Get your project ID from: https://cloud.walletconnect.com/')
 }
 
 // Fallback for development only - NEVER use in production
