@@ -25,7 +25,6 @@ import type {
   Quest
 } from '@/types/gamification'
 import MockApiService from '@/services/mockApiService'
-import MockApiService from '@/services/mockApiService'
 
 const mockBadges: UserBadge[] = [
   {
