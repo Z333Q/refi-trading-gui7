@@ -1,65 +1,28 @@
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Button } from './button'
-import { Badge } from './badge'
 import { 
   Globe,
   Check,
   ChevronDown
 } from 'lucide-react'
+import { languages } from '@/config/languages'
 
-const languages = [
-  { code: 'en', name: 'English', flag: '🇺🇸' },
-  { code: 'ar', name: 'العربية', flag: '🇦🇪', rtl: true },
-  { code: 'fr', name: 'Français', flag: '🇫🇷' },
-  { code: 'es', name: 'Español', flag: '🇪🇸' },
-  { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
-  { code: 'it', name: 'Italiano', flag: '🇮🇹' },
-  { code: 'pt', name: 'Português', flag: '🇧🇷' },
-  { code: 'ru', name: 'Русский', flag: '🇷🇺' },
-  { code: 'zh', name: '中文', flag: '🇨🇳' },
-  { code: 'ja', name: '日本語', flag: '🇯🇵' },
-  { code: 'ko', name: '한국어', flag: '🇰🇷' },
-  { code: 'hi', name: 'हिन्दी', flag: '🇮🇳' },
-  { code: 'tr', name: 'Türkçe', flag: '🇹🇷' },
-  { code: 'nl', name: 'Nederlands', flag: '🇳🇱' },
-  { code: 'sv', name: 'Svenska', flag: '🇸🇪' },
-  { code: 'no', name: 'Norsk', flag: '🇳🇴' },
-  { code: 'da', name: 'Dansk', flag: '🇩🇰' },
-  { code: 'fi', name: 'Suomi', flag: '🇫🇮' },
-  { code: 'pl', name: 'Polski', flag: '🇵🇱' },
-  { code: 'cs', name: 'Čeština', flag: '🇨🇿' },
-  { code: 'hu', name: 'Magyar', flag: '🇭🇺' },
-  { code: 'ro', name: 'Română', flag: '🇷🇴' },
-  { code: 'bg', name: 'Български', flag: '🇧🇬' },
-  { code: 'hr', name: 'Hrvatski', flag: '🇭🇷' },
-  { code: 'sk', name: 'Slovenčina', flag: '🇸🇰' },
-  { code: 'sl', name: 'Slovenščina', flag: '🇸🇮' },
-  { code: 'et', name: 'Eesti', flag: '🇪🇪' },
-  { code: 'lv', name: 'Latviešu', flag: '🇱🇻' },
-  { code: 'lt', name: 'Lietuvių', flag: '🇱🇹' },
-  { code: 'el', name: 'Ελληνικά', flag: '🇬🇷' },
-  { code: 'he', name: 'עברית', flag: '🇮🇱', rtl: true },
-  { code: 'fa', name: 'فارسی', flag: '🇮🇷', rtl: true },
-  { code: 'ur', name: 'اردو', flag: '🇵🇰', rtl: true },
-  { code: 'th', name: 'ไทย', flag: '🇹🇭' },
-  { code: 'vi', name: 'Tiếng Việt', flag: '🇻🇳' },
-  { code: 'id', name: 'Bahasa Indonesia', flag: '🇮🇩' },
-  { code: 'ms', name: 'Bahasa Melayu', flag: '🇲🇾' },
-  { code: 'tl', name: 'Filipino', flag: '🇵🇭' },
-  { code: 'sw', name: 'Kiswahili', flag: '🇰🇪' },
-  { code: 'am', name: 'አማርኛ', flag: '🇪🇹' },
-  { code: 'yo', name: 'Yorùbá', flag: '🇳🇬' },
-  { code: 'ig', name: 'Igbo', flag: '🇳🇬' },
-  { code: 'ha', name: 'Hausa', flag: '🇳🇬' }
-]
-
+/**
+ * Language Selector Component
+ * 
+ * Provides a dropdown interface for changing the application language.
+ * Supports RTL languages and persists language preference.
+ */
 export function LanguageSelector() {
   const { i18n } = useTranslation()
   const [isOpen, setIsOpen] = useState(false)
 
   const currentLanguage = languages.find(lang => lang.code === i18n.language) || languages[0]
 
+  /**
+   * Handle language change with proper RTL support and persistence
+   */
   const handleLanguageChange = async (languageCode: string) => {
     try {
       console.log('Changing language to:', languageCode)
@@ -100,6 +63,7 @@ export function LanguageSelector() {
         size="sm"
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center space-x-2"
+        aria-label="Select language"
       >
         <Globe className="h-4 w-4" />
         <span className="hidden sm:inline">{currentLanguage.flag} {currentLanguage.name}</span>
@@ -127,9 +91,12 @@ export function LanguageSelector() {
                       ? 'bg-emerald-950/20 text-emerald-400'
                       : 'text-gray-300 hover:bg-gray-800'
                   }`}
+                  aria-label={`Switch to ${language.name}`}
                 >
                   <div className="flex items-center space-x-3">
-                    <span className="text-lg">{language.flag}</span>
+                    <span className="text-lg" role="img" aria-label={`${language.name} flag`}>
+                      {language.flag}
+                    </span>
                     <span>{language.name}</span>
                   </div>
                   {i18n.language === language.code && (

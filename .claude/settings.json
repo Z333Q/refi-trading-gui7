@@ -1,0 +1,51 @@
+{
+  "project": {
+    "name": "ReFi.Trading Platform",
+    "type": "react-typescript",
+    "framework": "vite"
+  },
+  "hooks": {
+    "pre-edit": [
+      "npx tsc --noEmit",
+      "npx eslint --fix"
+    ],
+    "post-edit": [
+      "npx eslint src/",
+      "npm audit --audit-level=moderate"
+    ]
+  },
+  "linting": {
+    "enabled": true,
+    "autoFix": true,
+    "rules": {
+      "typescript": "strict",
+      "react": "recommended",
+      "security": "strict"
+    }
+  },
+  "formatting": {
+    "enabled": true,
+    "prettier": {
+      "semi": false,
+      "singleQuote": true,
+      "trailingComma": "es5",
+      "tabWidth": 2
+    }
+  },
+  "security": {
+    "scanOnSave": true,
+    "checkSecrets": true,
+    "validateInputs": true
+  },
+  "performance": {
+    "bundleAnalysis": true,
+    "memoryLeakDetection": true,
+    "renderOptimization": true
+  },
+  "customCommands": {
+    "/security-check": "npm audit && npx eslint src/ --ext .ts,.tsx",
+    "/type-check": "npx tsc --noEmit",
+    "/test-all": "npm test && npm run lint",
+    "/production-ready": "npm run build && npm audit --audit-level=high"
+  }
+}

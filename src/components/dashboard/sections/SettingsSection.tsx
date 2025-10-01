@@ -141,6 +141,8 @@ export function SettingsSection() {
   }
 
   const handleSaveAlpacaConfig = (config: any) => {
+    // SECURITY NOTE: In production, config.secretKey should not be handled client-side
+    // The backend should return a connection ID instead of storing secrets in frontend
     const newApiKey = {
       id: Date.now(),
       name: config.name,
@@ -152,7 +154,7 @@ export function SettingsSection() {
       status: 'active' as const,
       icon: config.environment === 'paper' ? TestTube : Activity,
       keyId: config.keyId,
-      secret: config.secretKey
+      secret: '***STORED_SECURELY***' // In production, never store actual secrets client-side
     }
     setApiKeysList(prev => [...prev, newApiKey])
   }

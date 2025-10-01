@@ -24,48 +24,8 @@ import type {
   XPEvent,
   Quest
 } from '@/types/gamification'
-
-// Mock data - in real implementation, this would come from API
-const mockProfile: GamificationProfile = {
-  userId: '1',
-  level: 3,
-  xpTotal: 2450,
-  streakDays: 7,
-  lastActiveAt: new Date().toISOString(),
-  leaderboardOptIn: true,
-  handle: 'ProTrader',
-  softCaps: {
-    perTrade: 10000,
-    perSymbol: 30000
-  }
-}
-
-const mockRecentXP: XPEvent[] = [
-  {
-    id: '1',
-    userId: '1',
-    source: 'preview',
-    deltaXp: 5,
-    meta: { symbol: 'AAPL' },
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '2',
-    userId: '1',
-    source: 'risk_ok',
-    deltaXp: 3,
-    meta: {},
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '3',
-    userId: '1',
-    source: 'quiz_pass',
-    deltaXp: 20,
-    meta: { module: 'market_basics' },
-    createdAt: new Date().toISOString()
-  }
-]
+import MockApiService from '@/services/mockApiService'
+import MockApiService from '@/services/mockApiService'
 
 const mockBadges: UserBadge[] = [
   {
@@ -142,7 +102,29 @@ const mockLeaderboard = [
 export function GamificationSection() {
   const { t } = useTranslation()
   const [activeTab, setActiveTab] = useState('overview')
-  const [profile, setProfile] = useState(mockProfile)
+  const [profile, setProfile] = useState<GamificationProfile | null>(null)
+  const [recentXP, setRecentXP] = useState<XPEvent[]>([])
+  const [isLoading, setIsLoading] = useState(true)
+
+  // Load gamification data
+  useEffect(() => {
+    const loadData = async () => {
+      try {
+        const [profileData, xpEvents] = await Promise.all([
+          MockApiService.getGamificationProfile(),
+          MockApiService.getRecentXPEvents(10)
+        ])
+        setProfile(profileData)
+        setRecentXP(xpEvents)
+      } catch (error) {
+        console.error('Failed to load gamification data:', error)
+      } finally {
+        setIsLoading(false)
+      }
+    }
+
+    loadData()
+  }, [])
 
   const handleStartQuest = (questId: string) => {
     console.log('Starting quest:', questId)
@@ -154,19 +136,59 @@ export function GamificationSection() {
     // In real implementation, this would navigate to quest step
   }
 
-  const handleOptInChange = (optedIn: boolean) => {
-    setProfile(prev => ({ ...prev, leaderboardOptIn: optedIn }))
-    // In real implementation, this would call API to update opt-in status
+  const handleOptInChange = async (optedIn: boolean) => {
+    if (!profile) return
+    
+    try {
+      const updatedProfile = await MockApiService.updateGamificationProfile({ 
+        leaderboardOptIn: optedIn 
+      })
+      setProfile(updatedProfile)
+    } catch (error) {
+      console.error('Failed to update opt-in status:', error)
+    }
   }
 
-  const handleHandleChange = (handle: string) => {
-    setProfile(prev => ({ ...prev, handle }))
-    // In real implementation, this would call API to update handle
+  const handleHandleChange = async (handle: string) => {
+    if (!profile) return
+    
+    try {
+      const updatedProfile = await MockApiService.updateGamificationProfile({ handle })
+      setProfile(updatedProfile)
+    } catch (error) {
+      console.error('Failed to update handle:', error)
+    }
   }
 
   const handleViewEducation = () => {
     console.log('Navigate to education')
     // In real implementation, this would navigate to education section
+  }
+
+  if (isLoading) {
+    return (
+      <div className="space-y-6">
+        <div>
+          <h2 className="text-2xl font-bold mb-2">{t('gamification.title')}</h2>
+          <p className="text-gray-600 dark:text-gray-400">Loading your progress...</p>
+        </div>
+        <div className="animate-pulse space-y-4">
+          <div className="h-32 bg-gray-800 rounded-lg"></div>
+          <div className="h-48 bg-gray-800 rounded-lg"></div>
+        </div>
+      </div>
+    )
+  }
+
+  if (!profile) {
+    return (
+      <div className="space-y-6">
+        <div>
+          <h2 className="text-2xl font-bold mb-2">{t('gamification.title')}</h2>
+          <p className="text-gray-600 dark:text-gray-400">Failed to load gamification data</p>
+        </div>
+      </div>
+    )
   }
 
   return (
@@ -205,7 +227,7 @@ export function GamificationSection() {
                 profile={profile}
                 badges={mockBadges}
                 activeQuests={mockActiveQuests}
-                recentXP={mockRecentXP}
+                recentXP={recentXP}
                 onStartQuest={handleStartQuest}
                 onViewEducation={handleViewEducation}
               />

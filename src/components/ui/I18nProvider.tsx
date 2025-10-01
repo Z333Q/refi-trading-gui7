@@ -7,6 +7,12 @@ interface I18nProviderProps {
   children: React.ReactNode
 }
 
+/**
+ * I18n Provider Component
+ * 
+ * Provides internationalization context to the application.
+ * Handles loading states, errors, and RTL language support.
+ */
 export function I18nProvider({ children }: I18nProviderProps) {
   const [isI18nReady, setIsI18nReady] = useState(false)
   const [error, setError] = useState<string | null>(null)

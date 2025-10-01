@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { usePolygonWebSocket } from './usePolygonWebSocket'
 import type { DualProofGate, SafeModeStatus } from '@/types/trading'
+import MockApiService from '@/services/mockApiService'
 
 interface Trade {
   id: string
@@ -52,7 +53,6 @@ interface PortfolioMetrics {
 const SYMBOLS = ['AAPL', 'TSLA', 'NVDA', 'META', 'NFLX', 'GOOGL', 'COIN', 'ABNB', 'BAC', 'JPM', 'INTC', 'PYPL']
 const STRATEGIES = ['PPO Momentum', 'TD3 Mean Reversion', 'RVI-Q Swing']
 
-// Polygon.io API key - in production, this should come from environment variables
 const POLYGON_API_KEY = import.meta.env.VITE_POLYGON_API_KEY || 'demo' // Use 'demo' for testing
 
 // Base prices for realistic movement
@@ -312,6 +312,14 @@ export function useTradingSimulation() {
             ? { ...trade, status: 'filled' as const }
             : trade
         ))
+
+        // Award XP for trade execution
+        MockApiService.addXPEvent({
+          userId: '1',
+          source: 'fill',
+          deltaXp: 1,
+          meta: { symbol, strategy, side, quantity }
+        }).catch(error => console.warn('Failed to award XP for trade:', error))
 
         // Update positions
         setPositions(prev => {

@@ -19,3 +19,14 @@ test('allows only reductions when degraded', () => {
   })
   assert.equal(decision, 'APPROVE_REDUCTION_ONLY')
 })
+
+test('rejects buy orders when degraded (reduction-only mode)', () => {
+  const decision = supervisorDecision({
+    checks: { aceOk: false, varOk: false, degraded: true },
+    order: { side: 'buy', qty: 5 },
+    currentQty: 10,
+  })
+  // Buy orders should not be allowed in reduction-only mode
+  assert.notEqual(decision, 'APPROVE')
+  assert.notEqual(decision, 'APPROVE_REDUCTION_ONLY')
+})

@@ -15,6 +15,7 @@ import { EducationSection } from './components/dashboard/sections/EducationSecti
 import { TradingInterface } from './components/dashboard/TradingInterface'
 import { TooltipProvider } from './components/ui/tooltip'
 import { PersistentPopoutTab } from './components/ui/PersistentPopoutTab'
+import MockApiService from './services/mockApiService'
 
 function App() {
   const { ready } = useTranslation()
@@ -25,12 +26,12 @@ function App() {
 
   // Initialize app state
   useEffect(() => {
-    const initializeApp = () => {
+    const initializeApp = async () => {
       try {
-        // Check if user has completed onboarding
-        const hasCompletedOnboarding = localStorage.getItem('onboarding_completed')
+        // Check if user has completed onboarding using mock API
+        const { completed: hasCompletedOnboarding } = await MockApiService.getOnboardingStatus()
         
-        if (hasCompletedOnboarding === 'true') {
+        if (hasCompletedOnboarding) {
           setShowOnboarding(false)
         } else {
           setShowOnboarding(true)
@@ -48,10 +49,10 @@ function App() {
     initializeApp()
   }, [])
 
-  const handleOnboardingComplete = () => {
+  const handleOnboardingComplete = async () => {
     try {
-      // Mark onboarding as completed
-      localStorage.setItem('onboarding_completed', 'true')
+      // Mark onboarding as completed using mock API
+      await MockApiService.completeOnboarding()
       setShowOnboarding(false)
     } catch (error) {
       console.warn('Error saving onboarding completion:', error)

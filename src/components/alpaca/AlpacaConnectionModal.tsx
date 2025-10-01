@@ -82,6 +82,10 @@ export function AlpacaConnectionModal({ isOpen, onClose, onSave }: AlpacaConnect
 
   const handleSave = () => {
     if (connectionStatus === 'success') {
+      // SECURITY CRITICAL: In production, send credentials to secure backend
+      // POST /api/alpaca/save-credentials with { name, environment, keyId, secretKey }
+      // Backend should encrypt and securely store credentials
+      // Frontend should only receive a connection ID or status
       onSave(config)
       onClose()
       // Reset form

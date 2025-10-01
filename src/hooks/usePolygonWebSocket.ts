@@ -36,6 +36,16 @@ interface UsePolygonWebSocketProps {
   enabled?: boolean
 }
 
+// Polygon.io API key - in production, this should come from environment variables
+// SECURITY NOTE: For enhanced security in production, consider proxying Polygon.io requests
+// through your backend to avoid client-side API key exposure
+const POLYGON_API_KEY = import.meta.env.VITE_POLYGON_API_KEY || 'demo'
+
+if (!POLYGON_API_KEY || POLYGON_API_KEY === 'your_polygon_api_key_here') {
+  console.warn('Polygon.io API key not configured - using simulated market data')
+  console.warn('Get your API key from: https://polygon.io/')
+}
+
 export function usePolygonWebSocket({ apiKey, symbols, enabled = true }: UsePolygonWebSocketProps) {
   const [marketData, setMarketData] = useState<MarketData[]>([])
   const [connectionStatus, setConnectionStatus] = useState<'disconnected' | 'connecting' | 'connected' | 'error'>('disconnected')

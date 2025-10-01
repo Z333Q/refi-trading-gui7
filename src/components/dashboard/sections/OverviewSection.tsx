@@ -16,6 +16,7 @@ import { Button } from '../../ui/button'
 import { TrendingUp, TrendingDown, Activity, Shield, Wallet, Trophy } from 'lucide-react'
 import { Lock } from '../../icons'
 import type { DualProofGate, SafeModeStatus, GamificationProfile, UserBadge, UserQuest, XPEvent } from '@/types/trading'
+import MockApiService from '@/services/mockApiService'
 
 const quickStats = [
   {
@@ -65,40 +66,6 @@ const recentActivity = [
   }
 ]
 
-// Mock data for gamification
-const mockGamificationProfile: GamificationProfile = {
-  userId: '1',
-  level: 3,
-  xpTotal: 2450,
-  streakDays: 7,
-  lastActiveAt: new Date().toISOString(),
-  leaderboardOptIn: true,
-  handle: 'ProTrader',
-  softCaps: {
-    perTrade: 10000,
-    perSymbol: 30000
-  }
-}
-
-const mockRecentXP: XPEvent[] = [
-  {
-    id: '1',
-    userId: '1',
-    source: 'preview',
-    deltaXp: 5,
-    meta: {},
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '2',
-    userId: '1',
-    source: 'risk_ok',
-    deltaXp: 3,
-    meta: {},
-    createdAt: new Date().toISOString()
-  }
-]
-
 const mockSafeModeStatus: SafeModeStatus = {
   active: false
 }
@@ -109,6 +76,10 @@ export function OverviewSection() {
   const [totalXPEarned, setTotalXPEarned] = useState(0)
   const [showEducationOverlay, setShowEducationOverlay] = useState(false)
   const [educationType, setEducationType] = useState<'dual-proof' | 'risk-management' | 'strategy-basics' | 'gamification'>('dual-proof')
+  const [gamificationProfile, setGamificationProfile] = useState<GamificationProfile | null>(null)
+  const [recentXP, setRecentXP] = useState<XPEvent[]>([])
+  const [isLoadingProfile, setIsLoadingProfile] = useState(true)
+  
   const {
     trades,
     positions,
@@ -124,15 +95,49 @@ export function OverviewSection() {
     isInitialized
   } = useTradingSimulation()
 
+  // Load gamification data on component mount
+  useEffect(() => {
+    const loadGamificationData = async () => {
+      try {
+        const [profile, xpEvents] = await Promise.all([
+          MockApiService.getGamificationProfile(),
+          MockApiService.getRecentXPEvents(5)
+        ])
+        setGamificationProfile(profile)
+        setRecentXP(xpEvents)
+      } catch (error) {
+        console.error('Failed to load gamification data:', error)
+      } finally {
+        setIsLoadingProfile(false)
+      }
+    }
+
+    loadGamificationData()
+  }, [])
+
   const handleZkVarOnboardingComplete = (config: any) => {
     console.log('zk-VaR configuration completed:', config)
     setShowZkVarOnboarding(false)
   }
 
-  const handleXPEarned = (xp: number) => {
+  const handleXPEarned = async (xp: number) => {
     setTotalXPEarned(prev => prev + xp)
-    // In real implementation, this would update the user's XP in the database
-    console.log(`Earned ${xp} XP from educational content`)
+    
+    try {
+      // Update XP through mock API
+      const { profile, event } = await MockApiService.addXPEvent({
+        userId: '1',
+        source: 'quiz_pass',
+        deltaXp: xp,
+        meta: { source: 'educational_content' }
+      })
+      
+      setGamificationProfile(profile)
+      setRecentXP(prev => [event, ...prev.slice(0, 4)])
+      console.log(`Earned ${xp} XP from educational content`)
+    } catch (error) {
+      console.error('Failed to update XP:', error)
+    }
   }
 
   const handleShowEducation = (type: 'dual-proof' | 'risk-management' | 'strategy-basics' | 'gamification') => {
@@ -306,14 +311,16 @@ export function OverviewSection() {
           )}
           
           <div className="lg:block xl:hidden">
-            <GamificationPanel
-              profile={mockGamificationProfile}
-              badges={[]}
-              activeQuests={[]}
-              recentXP={mockRecentXP}
-              onStartQuest={(questId) => console.log('Start quest:', questId)}
-              onViewEducation={() => console.log('View education')}
-            />
+            {gamificationProfile && !isLoadingProfile && (
+              <GamificationPanel
+                profile={gamificationProfile}
+                badges={[]}
+                activeQuests={[]}
+                recentXP={recentXP}
+                onStartQuest={(questId) => console.log('Start quest:', questId)}
+                onViewEducation={() => console.log('View education')}
+              />
+            )}
           </div>
         </div>
       </div>

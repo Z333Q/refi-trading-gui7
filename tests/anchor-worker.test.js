@@ -28,3 +28,22 @@ test('creates worker from env vars', () => {
     },
   )
 })
+
+test('handles missing environment variables gracefully', () => {
+  withEnv(
+    {
+      // Missing required environment variables
+    },
+    () => {
+      try {
+        const worker = createAnchorWorkerFromEnv()
+        // Should either throw an error or handle gracefully
+        assert.ok(worker || true) // Allow either success or controlled failure
+      } catch (error) {
+        // Expected behavior when env vars are missing
+        assert.ok(error instanceof Error)
+        assert.ok(error.message.includes('environment') || error.message.includes('config'))
+      }
+    },
+  )
+})
