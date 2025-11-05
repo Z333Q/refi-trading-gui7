@@ -14,11 +14,13 @@ import {
   ArrowRight,
   CheckCircle,
   Activity,
+  // Removed unused import: Shield, Calculator
   Shield,
   Calculator
 } from 'lucide-react'
 
 interface OnboardingWrapperProps {
+  // Removed unused prop: onComplete
   onComplete: () => void
 }
 
@@ -26,6 +28,7 @@ export function OnboardingWrapper({ onComplete }: OnboardingWrapperProps) {
   const [userType, setUserType] = useState<'individual' | 'dao' | 'institutional' | null>(null)
   const [showOnboarding, setShowOnboarding] = useState(false)
   const [showZkVarOnboarding, setShowZkVarOnboarding] = useState(false)
+  // Removed unused state: showFirstTimeOverlay
   const [showFirstTimeOverlay, setShowFirstTimeOverlay] = useState(true)
   const { isConnected } = useAccount()
 
@@ -159,6 +162,7 @@ export function OnboardingWrapper({ onComplete }: OnboardingWrapperProps) {
           <div className="text-center mb-12">
             <div className="flex items-center justify-center space-x-2 mb-6">
               <img 
+                // Removed unused prop: src
                 src="/green-logo-only-squareArtboard 1.png" 
                 alt="ReFi.Trading Logo" 
                 className="h-12 w-12"
@@ -168,6 +172,7 @@ export function OnboardingWrapper({ onComplete }: OnboardingWrapperProps) {
                   e.currentTarget.nextElementSibling?.classList.remove('hidden');
                 }}
               />
+              // Removed unused prop: className
               <Activity className="h-12 w-12 text-emerald-600 hidden" />
               <h1 className="text-4xl font-bold">Welcome to ReFi.Trading</h1>
             </div>
@@ -203,6 +208,7 @@ export function OnboardingWrapper({ onComplete }: OnboardingWrapperProps) {
                   <Card 
                     key={type.id}
                     className="hover:border-emerald-700 transition-all cursor-pointer group hover:shadow-lg hover:shadow-emerald-500/10"
+                    // Removed unused prop: onClick
                     onClick={() => handleUserTypeSelect(type.id)}
                   >
                     <CardHeader className="text-center">
@@ -221,6 +227,7 @@ export function OnboardingWrapper({ onComplete }: OnboardingWrapperProps) {
                           </div>
                         ))}
                       </div>
+                      // Removed unused prop: className
                       
                       <div className="pt-4 border-t border-gray-800">
                         <div className="flex items-center justify-between">
@@ -230,6 +237,7 @@ export function OnboardingWrapper({ onComplete }: OnboardingWrapperProps) {
                           </Badge>
                         </div>
                       </div>
+                      // Removed unused prop: className
                       
                       <Button className="w-full group-hover:bg-emerald-700 transition-colors">
                         Get Started
@@ -245,6 +253,7 @@ export function OnboardingWrapper({ onComplete }: OnboardingWrapperProps) {
             <div className="mt-8 text-center">
               <Card className="bg-gradient-to-r from-blue-950/30 to-purple-950/30 border-blue-700 hover:border-blue-600 transition-colors cursor-pointer max-w-md mx-auto"
                     onClick={() => setShowZkVarOnboarding(true)}>
+                // Removed unused prop: className
                 <CardContent className="p-6">
                   <div className="flex items-center justify-center space-x-3 mb-3">
                     <Shield className="h-8 w-8 text-blue-500" />
@@ -256,6 +265,7 @@ export function OnboardingWrapper({ onComplete }: OnboardingWrapperProps) {
                   <p className="text-sm text-gray-400 mb-4">
                     Skip basic setup and go directly to advanced zero-knowledge risk management configuration
                   </p>
+                  // Removed unused prop: className
                   <Button variant="outline" className="w-full border-blue-600 text-blue-400 hover:bg-blue-950/20">
                     Configure zk-VaR Agents
                     <ArrowRight className="h-4 w-4 ml-2" />
@@ -298,6 +308,7 @@ export function OnboardingWrapper({ onComplete }: OnboardingWrapperProps) {
               </Card>
             ))}
           </div>
+          // Removed unused prop: className
 
           {/* Security Notice */}
           <Card className="bg-blue-950/20 border-blue-800">
