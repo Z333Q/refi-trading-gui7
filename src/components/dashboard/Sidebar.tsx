@@ -1,12 +1,13 @@
 import React from 'react'
 import { Button } from '../ui/button'
 import { Badge } from '../ui/badge'
-import { 
-  Activity, 
-  BarChart3, 
-  Shield, 
-  Settings, 
-  FileText, 
+import { navigationItems } from '@/config/navigation'
+import {
+  Activity,
+  BarChart3,
+  Shield,
+  Settings,
+  FileText,
   Wallet,
   TrendingUp,
   Zap,
